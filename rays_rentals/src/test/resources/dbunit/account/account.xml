@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<!-- Account to match the Hiberante test user -->
+	<account id="1001" name="testuser" email="testUser" password="pass123" role="ROLE_USER"   created_by="account.xml" created_date="2015-04-12 12:30:00.000" last_updated_by="account.xml" last_updated_date="2015-04-12 12:30:00.000" version_number="0"/>
+	
+</dataset>
