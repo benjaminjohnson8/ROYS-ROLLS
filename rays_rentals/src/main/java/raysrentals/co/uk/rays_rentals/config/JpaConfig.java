@@ -50,8 +50,8 @@ class JpaConfig implements TransactionManagementConfigurer {
     
     @Autowired
     private DataSource dataSource;
-    @Autowired
-//    private HibernateAuditInterceptor auditInterceptor;
+  //  @Autowired
+ //   private HibernateAuditInterceptor auditInterceptor;
 
     @Bean
     public DataSource configureDataSource() {
@@ -83,7 +83,7 @@ class JpaConfig implements TransactionManagementConfigurer {
             jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_IMPORT_FILES, importFiles);
         jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_IMPORT_FILES_SQL_EXTRACTOR, "org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor");
         jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
-     //   jpaProperties.put("hibernate.ejb.interceptor", auditInterceptor);
+ //    	jpaProperties.put("hibernate.ejb.interceptor", auditInterceptor);
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
 
         return entityManagerFactoryBean;
