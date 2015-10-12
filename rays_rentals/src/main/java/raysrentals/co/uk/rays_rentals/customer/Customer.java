@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "customer")
 //version controlled
-public class Customer	implements java.io.Serializable {
+public class Customer implements java.io.Serializable {
 	/**
 	 * randomly generateed
 	 */
