@@ -2,10 +2,17 @@ package raysrentals.co.uk.rays_rentals.config;
 
 import java.util.Properties;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
+import com.googlecode.genericdao.search.MetadataUtil;
+import com.googlecode.genericdao.search.hibernate.HibernateMetadataUtil;
+import com.googlecode.genericdao.search.jpa.JPASearchProcessor;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +24,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
+import raysrentals.co.uk.lib.helper.AutowireHelper;
+import raysrentals.co.uk.lib.model.HibernateAuditInterceptor;
 import raysrentals.co.uk.rays_rentals.Application;
 
 @Configuration
@@ -36,6 +45,13 @@ class JpaConfig implements TransactionManagementConfigurer {
     private String dialect;
     @Value("${hibernate.hbm2ddl.auto}")
     private String hbm2ddlAuto;
+    @Value("${hibernate.hbm2ddl.import_files:}")
+    private String importFiles; 
+    
+    @Autowired
+    private DataSource dataSource;
+    @Autowired
+//    private HibernateAuditInterceptor auditInterceptor;
 
     @Bean
     public DataSource configureDataSource() {
@@ -55,13 +71,19 @@ class JpaConfig implements TransactionManagementConfigurer {
     @Bean
     public LocalContainerEntityManagerFactoryBean configureEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(configureDataSource());
-        entityManagerFactoryBean.setPackagesToScan("raysrentals.co.uk.rays_rentals");
+        entityManagerFactoryBean.setDataSource(dataSource);
+        entityManagerFactoryBean.setPackagesToScan("raysrentals.co.uk");
         entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 
         Properties jpaProperties = new Properties();
         jpaProperties.put(org.hibernate.cfg.Environment.DIALECT, dialect);
+        if(null != hbm2ddlAuto && !hbm2ddlAuto.trim().isEmpty())
+            jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
+        if(null != importFiles && !importFiles.isEmpty())
+            jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_IMPORT_FILES, importFiles);
+        jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_IMPORT_FILES_SQL_EXTRACTOR, "org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor");
         jpaProperties.put(org.hibernate.cfg.Environment.HBM2DDL_AUTO, hbm2ddlAuto);
+     //   jpaProperties.put("hibernate.ejb.interceptor", auditInterceptor);
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
 
         return entityManagerFactoryBean;
@@ -71,4 +93,23 @@ class JpaConfig implements TransactionManagementConfigurer {
     public PlatformTransactionManager annotationDrivenTransactionManager() {
         return new JpaTransactionManager();
     }
+    
+    @Bean
+    public JPASearchProcessor jpaSearchProcessor() {
+    	JPASearchProcessor jpaSearchProcessor = new JPASearchProcessor(metadataUtil());
+    	return jpaSearchProcessor;
+    }
+    
+    @Bean
+    public MetadataUtil metadataUtil() {
+    	EntityManagerFactory entityManagerFactory = configureEntityManagerFactory().getObject();
+    	SessionFactory sessionFactory = entityManagerFactory.unwrap(SessionFactory.class);
+    	HibernateMetadataUtil metadataUtil = HibernateMetadataUtil.getInstanceForSessionFactory(sessionFactory);
+    	return metadataUtil;
+    }
+    
+    @Bean
+	public AutowireHelper autowireHelper(){
+	    return new AutowireHelper();
+	}
 }

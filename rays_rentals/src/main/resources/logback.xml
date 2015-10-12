@@ -15,5 +15,5 @@
 		<appender-ref ref="STDOUT" />
 	</root>
 
-	<logger name="raysrentals.co.uk.rays_rentals" level="ALL" />
+	<logger name="raysrentals.co.uk" level="ALL" />
 </configuration>

@@ -9,10 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import raysrentals.co.uk.lib.model.VersionControlled;
+
 
 @Entity
 @Table(name = "customer")
-public class Customer implements java.io.Serializable {
+public class Customer extends VersionControlled implements java.io.Serializable {
 	/**
 	 * randomly generateed
 	 */
