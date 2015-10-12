@@ -11,12 +11,11 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
 
-import raysrentals.co.uk.lib.model.VersionControlled;
-
 
 @Entity()
 @Table(name = "bike_record")
-public class Bike extends VersionControlled implements java.io.Serializable   {
+//extends versioncontrolleed?
+public class Bike implements java.io.Serializable   {
 
 	/**
 	 * 

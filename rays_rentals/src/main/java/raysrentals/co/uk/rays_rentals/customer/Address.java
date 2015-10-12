@@ -10,11 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import raysrentals.co.uk.lib.model.VersionControlled;
-
 @Entity
 @Table(name = "address")
-public class Address extends VersionControlled implements java.io.Serializable {
+public class Address implements java.io.Serializable {
 
 	/**
 	 * 
