@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{view.index.title}">Welcome!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="container">
+    <!-- /* Handle the flash message */-->
+    <th:block th:if="${message != null}">
+        <!-- /* The message code is returned from the @Controller */ -->
+        <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
+    </th:block>
+    
+    <div class="table-scroll">
+				<table class="table" th:if="${allbikes}">
+				<tr>
+					<th>
+						Bike ID
+					</th>
+					<th>
+						Manufacturer
+					</th>
+					<th>
+						Model
+					</th>		
+				</tr>
+				<tr th:each="bike : ${allbikes}">
+					<td>
+						<p th:text="${bike.id}"></p>
+					</td>
+					<td>
+						<p th:text="${bike.manufacturer}"></p>
+					</td>
+					<td>
+						<p th:text="${bike.model}"></p>
+					</td>
+				</tr>
+			</table>
+			</div>
+</div>
+</body>
+</html>
