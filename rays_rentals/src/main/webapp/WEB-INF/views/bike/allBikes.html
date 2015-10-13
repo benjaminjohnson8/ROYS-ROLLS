@@ -28,7 +28,14 @@
 					</th>
 					<th>
 						Model
-					</th>		
+					</th>
+					<th>
+						Price (&#163;)
+					</th>	
+					
+					<th>
+						Purchase Date
+					</th>					
 				</tr>
 				<tr th:each="bike : ${allBikes}">
 					<td>
@@ -40,7 +47,16 @@
 					<td>
 						<p th:text="${bike.model}"></p>
 					</td>
+					
+					<td>
+						<p th:text="${bike.price}"></p>
+					</td>
+					
+					<td>
+						<p th:text="${bike.purchaseDate}"></p>
+					</td>
 				</tr>
+				
 			</table>
 			</div>
 </div>
