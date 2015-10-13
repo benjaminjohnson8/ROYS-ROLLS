@@ -18,7 +18,7 @@
     </th:block>
     
     <div class="table-scroll">
-				<table class="table" th:if="${allbikes}">
+				<table class="table" th:if="${allBikes != null}">
 				<tr>
 					<th>
 						Bike ID
@@ -30,7 +30,7 @@
 						Model
 					</th>		
 				</tr>
-				<tr th:each="bike : ${allbikes}">
+				<tr th:each="bike : ${allBikes}">
 					<td>
 						<p th:text="${bike.id}"></p>
 					</td>

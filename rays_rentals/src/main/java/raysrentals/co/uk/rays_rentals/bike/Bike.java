@@ -32,15 +32,15 @@ public class Bike implements java.io.Serializable   {
 	@Column
 	private String manufacturer;
 	
-	@Column
-	@Type(type="org.jadira.usertype.dateandtime.threeten.PersistentLocalDateTime")
-	private LocalDateTime purchaseDate;
-	
-	@Column
-	private Currency price;
-	
-	@Column(name = "is_unavailable")
-	private Boolean unavailable;
+//	@Column
+//	@Type(type="org.jadira.usertype.dateandtime.threeten.PersistentLocalDateTime")
+//	private LocalDateTime purchaseDate;
+//	
+//	@Column
+//	private Currency price;
+//	
+//	@Column(name = "is_unavailable")
+//	private Boolean unavailable;
 	//TODO the rest
 
 	public Long getId() {
@@ -67,28 +67,28 @@ public class Bike implements java.io.Serializable   {
 		this.manufacturer = manufacturer;
 	}
 
-	public LocalDateTime getPurchaseDate() {
-		return purchaseDate;
-	}
-
-	public void setPurchaseDate(LocalDateTime purchaseDate) {
-		this.purchaseDate = purchaseDate;
-	}
-
-	public Currency getPrice() {
-		return price;
-	}
-
-	public void setPrice(Currency price) {
-		this.price = price;
-	}
-
-	public void setUnavailable(Boolean unavailable) {
-		this.unavailable = unavailable;
-	}
-	
-	public boolean isUnavaiable()
-	{
-		return unavailable;
-	}
+//	public LocalDateTime getPurchaseDate() {
+//		return purchaseDate;
+//	}
+//
+//	public void setPurchaseDate(LocalDateTime purchaseDate) {
+//		this.purchaseDate = purchaseDate;
+//	}
+//
+//	public Currency getPrice() {
+//		return price;
+//	}
+//
+//	public void setPrice(Currency price) {
+//		this.price = price;
+//	}
+//
+//	public void setUnavailable(Boolean unavailable) {
+//		this.unavailable = unavailable;
+//	}
+//	
+//	public boolean isUnavaiable()
+//	{
+//		return unavailable;
+//	}
 }

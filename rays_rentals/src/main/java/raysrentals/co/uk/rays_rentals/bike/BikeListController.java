@@ -17,12 +17,11 @@ public class BikeListController {
 	@Autowired
 	BikeService bikeService;
 	
-	@RequestMapping(value = "/allbikes", method = RequestMethod.GET)
+	@RequestMapping(value = "/allbikes")
 	public ModelAndView allBikes(){
 		ModelAndView mv = new ModelAndView("bike/allBikes");
-//		List<Bike> allBikes = bikeService.retrieveAllBike();
-//		allBikes = new ArrayList<Bike>();
-//		mv.addObject("allBikes", allBikes);
+		List<Bike> allBikes = bikeService.retrieveAllBike();
+		mv.addObject("allBikes", allBikes);
 		return mv;
 	}
 }
