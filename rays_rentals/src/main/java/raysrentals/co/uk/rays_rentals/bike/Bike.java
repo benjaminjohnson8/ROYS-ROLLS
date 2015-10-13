@@ -5,11 +5,14 @@ import java.util.Currency;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
+
 
 
 @Entity()
@@ -41,7 +44,14 @@ public class Bike implements java.io.Serializable   {
 	
 	@Column
 	private Boolean unavailable;
-	//TODO the rest
+
+	@Column(nullable=false, updatable=false)
+	@Enumerated(EnumType.STRING)
+	private BikeClassification classification;
+	
+	@Column(nullable=false, updatable=false)
+	@Enumerated(EnumType.STRING)
+	private BikeSize size;
 
 	public Long getId() {
 		return id;
@@ -91,4 +101,21 @@ public class Bike implements java.io.Serializable   {
 	{
 		return unavailable;
 	}
+	
+	public BikeClassification getClassification() {
+		return classification;
+	}
+
+	public void setClassification(BikeClassification classification) {
+		this.classification = classification;
+	}
+	
+	public BikeSize getSize() {
+		return size;
+	}
+
+	public void setSize(BikeSize size) {
+		this.size = size;
+	}
+
 }
