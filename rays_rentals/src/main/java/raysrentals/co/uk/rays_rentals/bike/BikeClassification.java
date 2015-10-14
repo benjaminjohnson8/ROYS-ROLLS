@@ -5,18 +5,15 @@ public enum BikeClassification {
 	TANDEM("TANDEM"),
 	ROAD("ROAD");
 	
-    private String value;
+private String prettyName;
+	
+	
+	private BikeClassification(String prettyName) {
+		this.prettyName = prettyName;
+	}
 
-    private BikeClassification(final String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-    
-    @Override
-    public String toString() {
-        return this.getValue();
-    }
+	public String getPrettyName()
+	{
+		return prettyName;
+	}
 }

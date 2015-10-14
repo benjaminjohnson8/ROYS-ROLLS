@@ -8,18 +8,15 @@ public enum BikeSize {
 	CHILD("CHILD");
 	
 	
-    private String value;
+	private String prettyName;
+	
+	
+	private BikeSize(String prettyName) {
+		this.prettyName = prettyName;
+	}
 
-    private BikeSize(final String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-    
-    @Override
-    public String toString() {
-        return this.getValue();
-    }
+	public String getPrettyName()
+	{
+		return prettyName;
+	}
 }

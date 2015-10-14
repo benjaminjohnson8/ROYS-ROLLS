@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title th:text="#{view.index.title}">Welcome!</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
     <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+    <script src="../../../resources/js/main.js" th:src="@{/resources/js/main.js}"></script>
+    
 </head>
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
@@ -16,6 +17,10 @@
         <!-- /* The message code is returned from the @Controller */ -->
         <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
     </th:block>
+    
+    <div style="display:inline-block">
+		<h2 class="pull-right"><small><a th:href="@{/bike/newbike}"><i class="fa fa-plus"></i>Add New Bike</a></small></h2>
+	</div>
     
     <div class="table-scroll">
 				<table class="table" th:if="${allBikes != null}">

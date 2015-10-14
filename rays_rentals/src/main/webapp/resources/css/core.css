@@ -31,7 +31,7 @@ body {
 }
 
 .sidebar ul li p {
-	font-size: 1.25em;
+	font-size: 1em;
 	padding: 0.5em;
 	margin: 0;
 	z-index: -80;
@@ -54,3 +54,26 @@ body {
 a:hover {
 	text-decoration: none;
 }
+
+.table-scroll, .table-scroll-small {
+	display: block;
+	overflow-y: auto;
+}
+
+.table-style {
+	border-top: 1px solid #C3C3C3;
+	border-right: 1px solid #C3C3C3;
+}
+
+.iter-table-top-style {
+	border-top: 1px solid #C3C3C3;
+}
+
+.table-style-end {
+	border-top: 1px solid #C3C3C3;
+	border-left: 1px solid white;
+}
+label {
+    margin-bottom: 5px;
+}
+

@@ -2,6 +2,7 @@ package raysrentals.co.uk.rays_rentals.bike;
 
 import java.time.LocalDateTime;
 import java.util.Currency;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,8 +37,7 @@ public class Bike implements java.io.Serializable   {
 	private String manufacturer;
 	
 	@Column
-	@Type(type="org.jadira.usertype.dateandtime.threeten.PersistentLocalDateTime")
-	private LocalDateTime purchaseDate;
+	private Date purchaseDate;
 	
 	@Column
 	private Float price;
@@ -77,11 +77,11 @@ public class Bike implements java.io.Serializable   {
 		this.manufacturer = manufacturer;
 	}
 
-	public LocalDateTime getPurchaseDate() {
+	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
 
-	public void setPurchaseDate(LocalDateTime purchaseDate) {
+	public void setPurchaseDate(Date purchaseDate) {
 		this.purchaseDate = purchaseDate;
 	}
 
