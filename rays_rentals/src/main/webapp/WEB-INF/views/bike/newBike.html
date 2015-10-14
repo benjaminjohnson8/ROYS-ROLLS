@@ -38,7 +38,7 @@
   				  </label>
   				  <label>
   					<select class="form-control form-padding" th:field="*{size}">
-  					<option value=""/>
+  					<option value="">Size</option>
 						<option
 							th:each="bikeSize : ${T(raysrentals.co.uk.rays_rentals.bike.BikeSize).values()}"
 							th:value="${bikeSize}" th:text="${bikeSize.prettyName}">
@@ -47,7 +47,7 @@
   				  </label>
   				  <label>
   					<select class="form-control" th:field="*{classification}">
-  					<option value=""/>
+  					<option value="">Classification</option>
 						<option
 							th:each="bikeSize : ${T(raysrentals.co.uk.rays_rentals.bike.BikeClassification).values()}"
 							th:value="${bikeSize}" th:text="${bikeSize.prettyName}">
