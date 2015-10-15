@@ -25,9 +25,8 @@
     <div style="display:inline-block">
 		<h2 class="pull-right"><small><a th:href="@{/bike/newbike}"><i class="fa fa-plus"></i>Add New Bike</a></small></h2>
 	</div>
-    
     <div  style="height:500px;overflow:auto;">
-				<table class="table">
+			<table class="table table-striped">
 				<tr>
 					<th>
 						Bike ID
@@ -52,10 +51,10 @@
 					</th>
 					<th>
 						Unavailable
-					</th>	
+					</th>		
 					<th>
 						Delete
-					</th>					
+						</th>					
 				</tr>
 				<tr th:each="bike : ${allBikes}">
 					<td>
