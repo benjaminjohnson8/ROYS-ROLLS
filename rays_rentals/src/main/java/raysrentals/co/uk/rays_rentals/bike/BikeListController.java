@@ -51,4 +51,12 @@ public class BikeListController {
 		bikeService.createOrUpdateBike(bike);
 		return new ModelAndView("redirect:allbikes");
 	}
+	
+	@RequestMapping(value="/deleteBike")
+	public ModelAndView deleteBike(Long id){
+		System.out.println(id + "");
+		bikeService.removeBikeById(id);
+		return new ModelAndView("redirect:allbikes");
+	}
+	
 }

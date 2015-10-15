@@ -70,6 +70,11 @@
 					<td>
 						<p th:text="${bike.size}"></p>
 					</td>
+					<td>
+					
+						<a th:href="@{/bike/deleteBike(id=${bike.id})}"><button>Remove</button></a>
+					
+					</td>
 				</tr>
 				
 			</table>

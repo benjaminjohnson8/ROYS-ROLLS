@@ -27,4 +27,9 @@ public class BikeServiceImpl extends HibernateJPABase<Bike, Long> implements Bik
 		return super.findAll();
 	 }
 	 
+	 @Override
+	 public void removeBikeById(Long id){
+		 super.removeById(id);
+	 }
+	 
 }

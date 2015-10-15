@@ -9,6 +9,8 @@ public interface BikeService  {
 	public Bike createOrUpdateBike(Bike bike);
 
 	public List<Bike> retrieveAllBike();
+	
+	public void removeBikeById(Long id);
 
 
 }
