@@ -11,16 +11,7 @@
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
 <div class="container">
-<div class="sidebar">
-			<ul>
-				<li>
-					<p><a th:href="@{/bike/allbikes}">Bikes</a></p>
-				</li>
-				<li>
-					<p><a th:href="@{/bike/newbike}">New Bikes</a></p>
-				</li>
-			</ul>
-		</div>
+
   	<form method="post" th:action="@{/bike/addNewBike}" th:object="${bike}">
   		<div class="container col-md-8 col-centered">
   		<!--  add validation here when needed -->

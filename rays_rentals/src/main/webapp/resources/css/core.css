@@ -85,4 +85,5 @@ label {
     margin-left: 70px;
 	float:left;
 }
+a { color: inherit; } 
 

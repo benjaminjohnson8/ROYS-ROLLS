@@ -12,28 +12,19 @@
 <div th:replace="fragments/header :: header">&nbsp;</div>
 <div class="container">
     <!-- /* Handle the flash message */-->
+   
     <th:block th:if="${message != null}">
         <!-- /* The message code is returned from the @Controller */ -->
         <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
     </th:block>
-    <div class="sidebar">
-			<ul>
-				<li>
-					<p><a th:href="@{/bike/allbikes}">Bikes</a></p>
-				</li>
-				<li>
-					<p><a th:href="@{/bike/newbike}">New Bikes</a></p>
-				</li>
-				
-			</ul>
-		</div>
+    
 		<center><u><h1>Rays Rentals - Dashboard</h1></u></center> <hr></hr>
 		
 	<a th:href="@{/bike/allbikes}">	<div class="DashboardButton">
 		<center><H1>View all Bikes</H1></center>
 		</div></a>
 		
-	<a th:href="@{/bike/allbikes}">	<div class="DashboardButton">
+	<a th:href="@{/bike/newbike}">	<div class="DashboardButton">
 		<center><H1>Add a new Bike</H1></center>
 		</div></a>
 		
