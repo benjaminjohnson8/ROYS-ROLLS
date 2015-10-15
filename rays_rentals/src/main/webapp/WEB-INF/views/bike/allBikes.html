@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
-    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
-    <script src="../../../resources/js/main.js" th:src="@{/resources/js/main.js}"></script>
-    
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../../resources/css/bootstrap.min.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+<link href="../../../resources/css/core.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/core.css}" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../../../resources/js/bootstrap.min.js"
+	th:src="@{/resources/js/bootstrap.min.js}"></script>
+<script src="../../../resources/js/main.js"
+	th:src="@{/resources/js/main.js}"></script>
+
 </head>
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
@@ -49,7 +53,7 @@
 				</tr>
 				<tr th:each="bike : ${allBikes}">
 					<td>
-						<p th:text="${bike.id}"></p>
+					<a th:href="@{/bike/bikeInfo(id=${bike.id})}">	<p th:text="${bike.id}"></p>  </a>
 					</td>
 					<td>
 						<p th:text="${bike.manufacturer}"></p>
@@ -72,7 +76,7 @@
 					</td>
 					<td>
 					
-						<a th:href="@{/bike/deleteBike(id=${bike.id})}"><button>Remove</button></a>
+						<a th:href="@{/bike/deleteBike(id=${bike.id})}"><img style="height: 30%;width:26%" src="http://findicons.com/files/icons/1742/ecqlipse_2/128/trash_full.png"/></a>
 					
 					</td>
 				</tr>
