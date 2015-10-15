@@ -45,7 +45,10 @@
 					</th>		
 					<th>
 						Size
-					</th>				
+					</th>
+					<th>
+						Unavailable
+					</th>					
 				</tr>
 				<tr th:each="bike : ${allBikes}">
 					<td>
@@ -69,6 +72,9 @@
 					</td>
 					<td>
 						<p th:text="${bike.size}"></p>
+					</td>
+					<td>
+						<p th:text="${bike.unavailable}"></p>
 					</td>
 					<td>
 					
