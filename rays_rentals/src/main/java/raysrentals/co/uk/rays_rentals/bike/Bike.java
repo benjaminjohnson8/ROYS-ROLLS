@@ -97,7 +97,7 @@ public class Bike implements java.io.Serializable   {
 		this.unavailable = unavailable;
 	}
 	
-	public boolean isUnavaiable()
+	public boolean isUnavailable()
 	{
 		return unavailable;
 	}
