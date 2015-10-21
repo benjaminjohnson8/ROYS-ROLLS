@@ -1,20 +1,21 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
-import java.time.LocalDateTime;
-import java.util.Currency;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.Type;
-
-
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 @Entity()
 @Table(name = "bike_record")
@@ -52,6 +53,10 @@ public class Bike implements java.io.Serializable   {
 	@Column(nullable=false, updatable=false)
 	@Enumerated(EnumType.STRING)
 	private BikeSize size;
+	
+	@OneToMany(mappedBy="bike", cascade=CascadeType.ALL)
+	@Fetch (FetchMode.SELECT)
+	private List<MaintenanceRecord> maintenanceRecords = new ArrayList<MaintenanceRecord>();
 
 	public Long getId() {
 		return id;
