@@ -56,6 +56,7 @@ public class BikeListController {
 //		}
 		Date date = new Date();
 		bike.setPurchaseDate(date);
+		bike.setUnavailable(false);
 		bikeService.createOrUpdateBike(bike);
 		return new ModelAndView("redirect:allbikes");
 	}
