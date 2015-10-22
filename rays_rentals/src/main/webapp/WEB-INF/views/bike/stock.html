@@ -35,6 +35,9 @@
 					<th>
 						Number of stock
 					</th>
+					<th>
+						Order more stock
+					</th>
 									
 				</tr>
 				<tr th:each="stock : ${allStock}">
@@ -46,6 +49,9 @@
 					</td>
 					<td>
 						<p th:text="${stock.numberOfStock}"></p>
+					</td>
+					<td>
+						<button>Order</button>
 					</td>
 					
 				</tr>
