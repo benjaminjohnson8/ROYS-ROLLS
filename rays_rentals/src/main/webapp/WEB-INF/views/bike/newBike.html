@@ -11,13 +11,13 @@
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
 <div class="container">
-
   	<form method="post" th:action="@{/bike/addNewBike}" th:object="${bike}">
+  		<input type="hidden" th:field="*{id}"/>
   		<div class="container col-md-8 col-centered">
   		<!--  add validation here when needed -->
   			<div class="col-md-8">
   				<div class="col-md-8">
-  				  <h2>New Bike</h2>
+  				  <h2 th:text="${title}">Create New Bike</h2>
   				  <label>
   					<input type="text" class="form-control form-padding" th:field="*{manufacturer}" placeholder="Manufacturer" />
   				  </label> 

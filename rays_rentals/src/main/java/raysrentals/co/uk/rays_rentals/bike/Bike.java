@@ -16,9 +16,11 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.Proxy;
 
 @Entity()
 @Table(name = "bike_record")
+@Proxy(lazy=false)
 //extends versioncontrolleed?
 public class Bike implements java.io.Serializable   {
 

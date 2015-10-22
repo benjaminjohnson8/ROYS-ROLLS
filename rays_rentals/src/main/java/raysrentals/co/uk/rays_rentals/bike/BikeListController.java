@@ -34,8 +34,18 @@ public class BikeListController {
 	@RequestMapping("/newbike")
 	public ModelAndView newproduct(@ModelAttribute("bike") Bike product, BindingResult result) {
 		ModelAndView mv = new ModelAndView("/bike/newBike");
+		mv.addObject("title", "New Bike");
 		return mv;
 				
+	}
+	
+	@RequestMapping(value ="/editBike")
+	public ModelAndView editBike(Long id) {
+		ModelAndView mv = new ModelAndView("/bike/newBike");
+		Bike bike = bikeService.retrieveBike(id);
+		mv.addObject("bike", bike);
+		mv.addObject("title", "Edit Bike");
+		return mv;
 	}
 	
 	@RequestMapping("/bikeInfo")

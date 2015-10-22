@@ -54,7 +54,10 @@
 					</th>		
 					<th>
 						Delete
-						</th>					
+					</th>
+					<th>
+						Edit
+					</th>					
 				</tr>
 				<tr th:each="bike : ${allBikes}">
 					<td>
@@ -85,6 +88,11 @@
 					<td>
 					
 						<a th:href="@{/bike/deleteBike(id=${bike.id})}"><img style="height: 30%;width:26%" src="http://findicons.com/files/icons/1742/ecqlipse_2/128/trash_full.png"/></a>
+					
+					</td>
+					<td>
+					
+						<a th:href="@{/bike/editBike(id=${bike.id})}"><img style="height: 30%;width:26%" src="http://findicons.com/files/icons/1742/ecqlipse_2/128/trash_full.png"/></a>
 					
 					</td>
 				</tr>
