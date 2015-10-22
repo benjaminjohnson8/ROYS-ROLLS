@@ -20,6 +20,9 @@ public class BikeListController {
 	@Autowired
 	BikeService bikeService;
 	
+	@Autowired
+	StockService stockService;
+	
 	@RequestMapping(value = "/allbikes")
 	public ModelAndView allBikes(){
 		ModelAndView mv = new ModelAndView("bike/allBikes");
@@ -39,6 +42,15 @@ public class BikeListController {
 	public ModelAndView bikeInfo(@ModelAttribute("bike") Bike product, BindingResult result,Long id) {
 		ModelAndView mv = new ModelAndView("/bike/bikeInfo");
 		mv.addObject("bike", bikeService.retrieveBike(id));
+		return mv;
+				
+	}
+	
+	@RequestMapping("/allstock")
+	public ModelAndView stock() {
+		ModelAndView mv = new ModelAndView("/bike/stock");
+		List<Stock> allStock = stockService.retrieveAllStock();
+		mv.addObject("allStock", allStock);
 		return mv;
 				
 	}

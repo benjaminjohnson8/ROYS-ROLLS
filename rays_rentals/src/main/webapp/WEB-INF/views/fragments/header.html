@@ -27,6 +27,7 @@
 					<li class=""><a href="#" th:href="@{/}">Home</a></li>
 						<li class=""><a href="#" th:href="@{/bike/allbikes}">All Bikes</a></li>
 						<li class=""><a href="#" th:href="@{/bike/newbike}">New Bike</a></li>
+						<li class=""><a href="#" th:href="@{/bike/allstock}">Stock</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li th:if="${#authorization.expression('!isAuthenticated()')}">

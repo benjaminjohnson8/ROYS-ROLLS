@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../../resources/css/bootstrap.min.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+<link href="../../../resources/css/core.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/core.css}" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../../../resources/js/bootstrap.min.js"
+	th:src="@{/resources/js/bootstrap.min.js}"></script>
+<script src="../../../resources/js/main.js"
+	th:src="@{/resources/js/main.js}"></script>
+
+</head>
+<body>
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="container">
+    <!-- /* Handle the flash message */-->
+    <th:block th:if="${message != null}">
+        <!-- /* The message code is returned from the @Controller */ -->
+        <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
+    </th:block>
+    
+    
+    <div  style="height:500px;overflow:auto;">
+			<table class="table table-striped">
+				<tr>
+					<th>
+						Part ID
+					</th>
+					<th>
+						Part Name
+					</th>
+					<th>
+						Number of stock
+					</th>
+									
+				</tr>
+				<tr th:each="stock : ${allStock}">
+					<td>
+						<p th:text="${stock.id}"></p>
+					</td>
+					<td>
+						<p th:text="${stock.partName}"></p>
+					</td>
+					<td>
+						<p th:text="${stock.numberOfStock}"></p>
+					</td>
+					
+				</tr>
+				
+			</table>
+			</div>
+</div>
+</body>
+</html>

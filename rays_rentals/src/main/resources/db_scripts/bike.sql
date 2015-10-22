@@ -9,4 +9,7 @@ VALUES(109, 'Apollo', 'X781','28', true, CURRENT_DATE(),'ROAD','STANDARD_MALE'),
 (116, 'Apollo', 'X781','28', true, CURRENT_DATE(),'ROAD','STANDARD_MALE'),
 (117, 'Apollo', 'X781','28', true, CURRENT_DATE(),'ROAD','STANDARD_MALE');
 
+INSERT INTO stock(id, partName, numberOfStock)
+VALUES(1, 'Wheels', 100);
+
 
