@@ -13,7 +13,117 @@
 </head>
 <body>
 	<div th:replace="fragments/header :: header">&nbsp;</div>
-	<div class="container">
+	<div class="container text-center"
+		style="vertical-align: middle; text-align: center; margin: auto; position: relative">
+		<br />
+		<h1>Bike Data</h1>
+		<br />
+		<hr />
+		<span class="col-md-1"></span>
+		<div class="col-md-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Bike ID</h3>
+				</div>
+				<div class="panel-body">id</div>
+			</div>
+		</div>
+
+
+		<div class="col-md-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Manufacturer</h3>
+				</div>
+				<div class="panel-body">make</div>
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Model</h3>
+				</div>
+				<div class="panel-body">model</div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Size</h3>
+				</div>
+				<div class="panel-body">Large</div>
+			</div>
+		</div>
+
+		<div class="col-md-2">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Purchase Date</h3>
+				</div>
+				<div class="panel-body">Date</div>
+			</div>
+		</div>
+		<br /> <span class="col-md-3"></span>
+		<div class="col-md-3">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Price</h3>
+				</div>
+				<div class="panel-body">Quid</div>
+			</div>
+		</div>
+
+		<div class="col-md-3" style="margin: auto; position: centre;">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Available for rent</h3>
+				</div>
+				<div class="panel-body">True</div>
+			</div>
+		</div>
+		<div class="col-md-5" style="border:1px dashed;">
+			<form class="form-horizontal">
+				<fieldset>
+
+					<!-- Form Name -->
+					<legend>Rent Bike</legend>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="Name">Name</label>
+						<div class="col-md-4">
+							<input id="Name" name="Name" type="text" placeholder="Name"
+								class="form-control input-md" required="" />
+
+						</div>
+					</div>
+
+					<!-- Text input-->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="Duration">Duration</label>
+						<div class="col-md-4">
+							<input id="Duration" name="Duration" type="text"
+								placeholder="Duration" class="form-control input-md" required="" />
+
+						</div>
+					</div>
+					<!-- Button -->
+					<div class="form-group">
+						<label class="col-md-4 control-label" for="singlebutton">Single
+							Button</label>
+						<div class="col-md-4">
+							<button id="singlebutton" name="singlebutton"
+								class="btn btn-primary">Button</button>
+						</div>
+					</div>
+
+				</fieldset>
+			</form>
+		</div>
+
+
+
 
 	</div>
 </body>
