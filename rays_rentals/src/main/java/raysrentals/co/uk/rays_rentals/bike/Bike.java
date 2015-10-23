@@ -47,7 +47,7 @@ public class Bike implements java.io.Serializable   {
 	private Float price;
 	
 	@Column
-	private Boolean unavailable;
+	private Boolean available;
 
 	@Column(nullable=false, updatable=false)
 	@Enumerated(EnumType.STRING)
@@ -102,13 +102,13 @@ public class Bike implements java.io.Serializable   {
 		this.price = price;
 	}
 
-	public void setUnavailable(Boolean unavailable) {
-		this.unavailable = unavailable;
+	public void setAvailable(Boolean available) {
+		this.available = available;
 	}
 	
-	public boolean isUnavailable()
+	public boolean isAvailable()
 	{
-		return unavailable;
+		return available;
 	}
 	
 	public BikeClassification getClassification() {

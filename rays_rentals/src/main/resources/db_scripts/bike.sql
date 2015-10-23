@@ -1,4 +1,4 @@
-INSERT INTO bike_record(id, manufacturer, model, price, unavailable, purchaseDate, classification, size)
+INSERT INTO bike_record(id, manufacturer, model, price, available, purchaseDate, classification, size)
 VALUES(109, 'Apollo', 'X781','28', true, CURRENT_DATE(),'ROAD','STANDARD_MALE'),
 (110, 'Apollo', 'X781','28', true, CURRENT_DATE(),'ROAD','STANDARD_MALE'),
 (111, 'Apollo', 'X781','28',  true, CURRENT_DATE(),'ROAD','STANDARD_MALE'),
