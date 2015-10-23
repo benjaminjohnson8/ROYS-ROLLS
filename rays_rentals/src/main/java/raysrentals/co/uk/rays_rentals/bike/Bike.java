@@ -1,5 +1,6 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -85,6 +86,7 @@ public class Bike implements java.io.Serializable   {
 	}
 
 	public Date getPurchaseDate() {
+
 		return purchaseDate;
 	}
 
