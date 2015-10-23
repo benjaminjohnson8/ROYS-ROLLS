@@ -10,11 +10,26 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="../../../resources/js/bootstrap.min.js"
 	th:src="@{/resources/js/bootstrap.min.js}"></script>
+<script>
+	$(document).ready(function() {
+		$(".table").hide();
+		$("#hide").click(function() {
+			$(".form-horizontal").hide();
+			$(".table").show();
+
+		});
+		$("#show").click(function() {
+			$(".form-horizontal").show();
+			$(".table").hide();
+		});
+	});
+</script>
 </head>
 <body>
 	<div th:replace="fragments/header :: header">&nbsp;</div>
 	<div class="container text-center"
-		style="vertical-align: middle; text-align: center; margin: auto; position: relative">
+		style="vertical-align: middle; text-align: center; margin: auto; position: relative"
+		th:object="${bike}">
 		<br />
 		<h1>Bike Data</h1>
 		<br />
@@ -25,7 +40,9 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Bike ID</h3>
 				</div>
-				<div class="panel-body">id</div>
+				<div class="panel-body">
+					<span th:text="${bike.id}"></span>
+				</div>
 			</div>
 		</div>
 
@@ -35,7 +52,9 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Manufacturer</h3>
 				</div>
-				<div class="panel-body">make</div>
+				<div class="panel-body">
+					<span th:text="${bike.manufacturer}"></span>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-2">
@@ -43,7 +62,9 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Model</h3>
 				</div>
-				<div class="panel-body">model</div>
+				<div class="panel-body">
+					<span th:text="${bike.model}"></span>
+				</div>
 			</div>
 		</div>
 
@@ -52,7 +73,9 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Size</h3>
 				</div>
-				<div class="panel-body">Large</div>
+				<div class="panel-body">
+					<span th:text="${bike.size}"></span>
+				</div>
 			</div>
 		</div>
 
@@ -61,7 +84,9 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Purchase Date</h3>
 				</div>
-				<div class="panel-body">Date</div>
+				<div class="panel-body">
+					<span th:text="${bike.PurchaseDate}"></span>
+				</div>
 			</div>
 		</div>
 		<br /> <span class="col-md-3"></span>
@@ -70,7 +95,9 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Price</h3>
 				</div>
-				<div class="panel-body">Quid</div>
+				<div class="panel-body">
+					&#163;<span th:text="${bike.price}"></span>
+				</div>
 			</div>
 		</div>
 
@@ -79,15 +106,24 @@
 				<div class="panel-heading">
 					<h3 class="panel-title">Available for rent</h3>
 				</div>
-				<div class="panel-body">True</div>
+				<div class="panel-body">
+					<span th:text="${bike.unavailable}"></span>
+				</div>
 			</div>
 		</div>
-		<div class="col-md-12" >
+		<br /> <br />
+		<hr />
+		<div class="col-md-12">
+
+			<div class="btn-group btn-group-lg" role="group" aria-label="...">
+				<button id="hide" class="btn btn-primary">Maintenance</button>
+				<button id="show" class="btn btn-primary">Rent Bicycle</button>
+			</div>
 			<form class="form-horizontal">
 				<fieldset>
 
 					<!-- Form Name -->
-					<legend>Rent Bike</legend>
+					<h1>Rent Bike</h1>
 
 					<!-- Text input-->
 					<div class="form-group">
@@ -110,8 +146,7 @@
 					</div>
 					<!-- Button -->
 					<div class="form-group">
-						<label class="col-md-4 control-label" for="singlebutton">Single
-							Button</label>
+						<label class="col-md-4 control-label" for="singlebutton"></label>
 						<div class="col-md-4">
 							<button id="singlebutton" name="singlebutton"
 								class="btn btn-primary">Button</button>
@@ -120,7 +155,65 @@
 
 				</fieldset>
 			</form>
+
+
+			<div class="table">
+				<h2>Maintencance Table</h2>
+				<p>Below you will find a history of this bikes maintainence</p>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>Ref no.</th>
+							<th>fault Details</th>
+							<th>Fault Date</th>
+							<th>Action Taken</th>
+							<th>Action Date</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+						<td> 1</td>
+						<td> Popped Tyre</td>
+						<td>21/4/2119</td>
+						<td>Jeff Patched it up</td>
+						<td>21/4/2119</td>
+						</tr>
+						<tr>
+						<td> 1</td>
+						<td> Popped Tyre</td>
+						<td>21/4/2119</td>
+						<td>Jeff Patched it up</td>
+						<td>21/4/2119</td>
+						</tr>
+						<tr>
+						<td> 1</td>
+						<td> Popped Tyre</td>
+						<td>21/4/2119</td>
+						<td>Jeff Patched it up</td>
+						<td>21/4/2119</td>
+						</tr>
+						<tr>
+						<td> 1</td>
+						<td> Popped Tyre</td>
+						<td>21/4/2119</td>
+						<td>Jeff Patched it up</td>
+						<td>21/4/2119</td>
+						</tr>
+						<tr>
+						<td> 1</td>
+						<td> Popped Tyre</td>
+						<td>21/4/2119</td>
+						<td>Jeff Patched it up</td>
+						<td>21/4/2119</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
 		</div>
+
+
+
 
 
 
