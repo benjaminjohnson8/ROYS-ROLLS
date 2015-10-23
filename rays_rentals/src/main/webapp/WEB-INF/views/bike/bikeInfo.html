@@ -10,27 +10,14 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script src="../../../resources/js/bootstrap.min.js"
 	th:src="@{/resources/js/bootstrap.min.js}"></script>
-<script>
-	$(document).ready(function() {
-		$(".table").hide();
-		$("#hide").click(function() {
-			$(".form-horizontal").hide();
-			$(".table").show();
 
-		});
-		$("#show").click(function() {
-			$(".form-horizontal").show();
-			$(".table").hide();
-		});
-	});
-</script>
 </head>
 <body>
 	<div th:replace="fragments/header :: header">&nbsp;</div>
 	<div class="container text-center"
 		style="vertical-align: middle; text-align: center; margin: auto; position: relative"
 		th:object="${bike}">
-		<br />
+
 		<h1>Bike Data</h1>
 		<br />
 		<hr />
@@ -47,8 +34,8 @@
 		</div>
 
 
-		<div class="col-md-2">
-			<div class="panel panel-primary">
+		<div class="col-md-2" >
+			<div class="panel panel-primary" id="manufacturer">
 				<div class="panel-heading">
 					<h3 class="panel-title">Manufacturer</h3>
 				</div>
@@ -172,39 +159,39 @@
 					</thead>
 					<tbody>
 						<tr>
-						<td> 1</td>
-						<td> Popped Tyre</td>
-						<td>21/4/2119</td>
-						<td>Jeff Patched it up</td>
-						<td>21/4/2119</td>
+							<td>1</td>
+							<td>Popped Tyre</td>
+							<td>21/4/2119</td>
+							<td>Jeff Patched it up</td>
+							<td>21/4/2119</td>
 						</tr>
 						<tr>
-						<td> 1</td>
-						<td> Popped Tyre</td>
-						<td>21/4/2119</td>
-						<td>Jeff Patched it up</td>
-						<td>21/4/2119</td>
+							<td>1</td>
+							<td>Popped Tyre</td>
+							<td>21/4/2119</td>
+							<td>Jeff Patched it up</td>
+							<td>21/4/2119</td>
 						</tr>
 						<tr>
-						<td> 1</td>
-						<td> Popped Tyre</td>
-						<td>21/4/2119</td>
-						<td>Jeff Patched it up</td>
-						<td>21/4/2119</td>
+							<td>1</td>
+							<td>Popped Tyre</td>
+							<td>21/4/2119</td>
+							<td>Jeff Patched it up</td>
+							<td>21/4/2119</td>
 						</tr>
 						<tr>
-						<td> 1</td>
-						<td> Popped Tyre</td>
-						<td>21/4/2119</td>
-						<td>Jeff Patched it up</td>
-						<td>21/4/2119</td>
+							<td>1</td>
+							<td>Popped Tyre</td>
+							<td>21/4/2119</td>
+							<td>Jeff Patched it up</td>
+							<td>21/4/2119</td>
 						</tr>
 						<tr>
-						<td> 1</td>
-						<td> Popped Tyre</td>
-						<td>21/4/2119</td>
-						<td>Jeff Patched it up</td>
-						<td>21/4/2119</td>
+							<td>1</td>
+							<td>Popped Tyre</td>
+							<td>21/4/2119</td>
+							<td>Jeff Patched it up</td>
+							<td>21/4/2119</td>
 						</tr>
 					</tbody>
 				</table>
@@ -219,5 +206,28 @@
 
 
 	</div>
+
 </body>
+<script>
+	$(document).ready(function() {
+		$(".table").hide();
+		$("#hide").click(function() {
+			$(".form-horizontal").hide();
+			$(".table").show();
+
+		});
+		$("#show").click(function() {
+			$(".form-horizontal").show();
+			$(".table").hide();
+		});
+
+		$("#manufacturer").click(function() {
+			prompt("Manufacturer", "textbox's intial text");
+			
+		});
+
+	});
+</script>
+
+
 </html>
