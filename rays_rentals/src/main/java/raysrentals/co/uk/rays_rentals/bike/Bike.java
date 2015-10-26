@@ -60,6 +60,10 @@ public class Bike implements java.io.Serializable   {
 	@OneToMany(mappedBy="bike", cascade=CascadeType.ALL)
 	@Fetch (FetchMode.SELECT)
 	private List<MaintenanceRecord> maintenanceRecords = new ArrayList<MaintenanceRecord>();
+	
+	@OneToMany(mappedBy="bike")
+	@Fetch (FetchMode.SELECT)
+	private List<RentalRecord> rentalRecords = new ArrayList<RentalRecord>();
 
 	public Long getId() {
 		return id;
@@ -125,6 +129,22 @@ public class Bike implements java.io.Serializable   {
 
 	public void setSize(BikeSize size) {
 		this.size = size;
+	}
+	
+	public List<MaintenanceRecord> getMaintenanceRecords() {
+		return maintenanceRecords;
+	}
+
+	public void setMaintenanceRecords(List<MaintenanceRecord> maintenanceRecords) {
+		this.maintenanceRecords = maintenanceRecords;
+	}
+
+	public List<RentalRecord> getRentalRecords() {
+		return rentalRecords;
+	}
+
+	public void setRentalRecords(List<RentalRecord> rentalRecords) {
+		this.rentalRecords = rentalRecords;
 	}
 
 }
