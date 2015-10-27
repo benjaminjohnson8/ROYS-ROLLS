@@ -13,8 +13,23 @@ import raysrentals.co.uk.lib.dao.HibernateJPABase;
 public class StockServiceImpl extends HibernateJPABase<Stock, Long> implements StockService {
 	
 	@Override
+	public Stock retrieveStock(Long id){
+		return super.getReference(id);
+	}
+	
+	@Override
 	 public List<Stock> retrieveAllStock(){
 		return super.findAll();
+	 }
+	
+	@Override
+	public Stock createOrUpdateStock(Stock stock){
+		return super.save(stock);
+	}
+	
+	@Override
+	 public void removeStockById(Long id){
+		 super.removeById(id);
 	 }
 
 }
