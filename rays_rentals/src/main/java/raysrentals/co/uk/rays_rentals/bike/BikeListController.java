@@ -23,7 +23,7 @@ public class BikeListController {
 	@Autowired
 	StockService stockService;
 	@Autowired
-	MaintenanceService maintencanceService;
+	MaintenanceService maintenanceService;
 	
 	@RequestMapping(value = "/allbikes")
 	public ModelAndView allBikes(){
@@ -54,7 +54,7 @@ public class BikeListController {
 	public ModelAndView bikeInfo(@ModelAttribute("bike") Bike product, BindingResult result,Long id) {
 		ModelAndView mv = new ModelAndView("/bike/bikeInfo");
 		mv.addObject("bike", bikeService.retrieveBike(id));
-		mv.addObject("history",maintencanceService.retrieveAllMaintenanceHistory());
+		mv.addObject("history",maintenanceService.retrieveAllMaintenanceHistory());
 		return mv;
 				
 	}
