@@ -151,7 +151,7 @@
 			
 				<table class="table table-bordered">
 					<thead>
-						<tr>
+						<tr th:each="bike : ${allBikes}">
 							<th>Ref no.</th>
 							<th>fault Details</th>
 							<th>Fault Date</th>
