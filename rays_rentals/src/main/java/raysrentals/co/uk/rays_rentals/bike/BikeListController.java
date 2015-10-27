@@ -68,6 +68,34 @@ public class BikeListController {
 				
 	}
 	
+	@RequestMapping("/newstock")
+	public ModelAndView newStock(@ModelAttribute("stock") Stock product, BindingResult result) {
+		ModelAndView mv = new ModelAndView("/bike/newStock");
+		return mv;
+				
+	}
+	
+	@RequestMapping(value = "/addNewStock")
+	public ModelAndView newStockInfo(@ModelAttribute("stock") Stock stock, BindingResult bindingResult) {
+		stockService.createOrUpdateStock(stock);
+		return new ModelAndView("redirect:allstock");
+	}
+	
+	@RequestMapping(value ="/editStock")
+	public ModelAndView editStock(Long id) {
+		ModelAndView mv = new ModelAndView("/bike/newStock");
+		Stock stock = stockService.retrieveStock(id);
+		mv.addObject("stock", stock);
+		mv.addObject("title", "Edit Stock");
+		return mv;
+	}
+	
+	@RequestMapping(value="/deleteStock")
+	public ModelAndView deleteStock(Long id){
+		stockService.removeStockById(id);
+		return new ModelAndView("redirect:allstock");
+	}
+	
 	@RequestMapping("/rentalrecords")
 	public ModelAndView rentalRecords() {
 		ModelAndView mv = new ModelAndView("/bike/rentalRecords");
