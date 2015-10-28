@@ -16,3 +16,5 @@ VALUES(1, 'Wheels', 100),
 (4, 'Handlebars', 100);
 
 
+INSERT INTO maintenance_record(id, actionDate, actionTaken, faultDate, FaultDetails, bike_id) 
+VALUES (890, sysDate(), 'fixed', sysDate(), 'wonky wheel', 109);

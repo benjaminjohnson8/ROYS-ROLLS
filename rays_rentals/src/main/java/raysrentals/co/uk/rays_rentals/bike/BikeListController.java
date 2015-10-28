@@ -54,7 +54,9 @@ public class BikeListController {
 	public ModelAndView bikeInfo(@ModelAttribute("bike") Bike product, BindingResult result,Long id) {
 		ModelAndView mv = new ModelAndView("/bike/bikeInfo");
 		mv.addObject("bike", bikeService.retrieveBike(id));
-		mv.addObject("history",maintenanceService.retrieveAllMaintenanceHistory());
+		List<MaintenanceRecord> maintenanceRecords = maintenanceService.retrieveAllMaintenanceHistoryForBike(id);
+		System.out.println(maintenanceRecords);
+		mv.addObject("history",maintenanceRecords);
 		return mv;
 				
 	}
