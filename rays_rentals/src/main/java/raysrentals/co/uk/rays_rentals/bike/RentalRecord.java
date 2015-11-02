@@ -20,9 +20,6 @@ public class RentalRecord {
 	private Long id;
 	
 	@Column
-	private Bike bikeRented;
-
-	@Column
 	private Date rentDate;
 	
 	@Column
@@ -35,22 +32,15 @@ public class RentalRecord {
 	private Date timeBackActual;
 	
 	@Column
-	private Customer customer;
-	
-	@Column
 	private float amountPaid;
 	
 	@JoinColumn(name = "bike_id")
 	@ManyToOne()
 	private Bike bike;
-
-	public Bike getBikeRented() {
-		return bikeRented;
-	}
-
-	public void setBikeRented(Bike bikeRented) {
-		this.bikeRented = bikeRented;
-	}
+	
+	@JoinColumn(name = "customer_id")
+	@ManyToOne()
+	private Customer customer;
 
 	public Date getRentDate() {
 		return rentDate;
