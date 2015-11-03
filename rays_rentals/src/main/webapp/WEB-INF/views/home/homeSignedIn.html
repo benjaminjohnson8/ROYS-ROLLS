@@ -24,9 +24,16 @@
 		<a th:href="@{/bike/allstock}"><button class="button">View all stock</button> <br /></a>
 		<a th:href="@{/bike/rentalrecords}"><button class="button">View all rentals</button> <br /></a>
 		</div>
-			<div class="col-md-2"></div>
-			<div class="col-md-5">
-			<center><h1><small>Welcome Roy <br /> Today's date: Hardcoded Date hahahahhaahhah </small></h1></center>
+		<div class="col-md-2"></div>
+		<div class="col-md-5">
+			<center>
+				<h1>
+					<small>Welcome Roy <br /> Today's date: <span id="date"></span>
+					</small>
+				</h1>
+			</center>
+			<br />
+			<center><img alt="" src="https://cdn2.iconfinder.com/data/icons/cycling/256/bike-fixed-gear-512.png" style="height:50%;width:50%;margin:50dp"/></center>
 		</div>
 <!-- 		
 	<a th:href="@{/bike/allbikes}">	<div class="DashboardButton">
@@ -48,6 +55,17 @@
 		
 </div>
 </body>
+<script type="text/javascript">
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+
+
+document.getElementById("date").innerHTML=dd+"/"+mm+"/"+yyyy;
+
+</script>
 </html>
 
 
