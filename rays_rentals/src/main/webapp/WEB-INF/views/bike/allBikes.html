@@ -61,7 +61,7 @@
 				</tr>
 				<tr th:each="bike : ${allBikes}">
 					<td>
-					<a th:href="@{/bike/bikeInfo(id=${bike.id})}">	<p th:text="${bike.id}"></p>  </a>
+					<a style ="color:#7272F7" th:href="@{/bike/bikeInfo(id=${bike.id})}">	<span style="text-decoration: underline"><p th:text="${bike.id}"></p></span>  </a>
 					</td>
 					<td>
 						<p th:text="${bike.manufacturer}"></p>

@@ -66,7 +66,7 @@
 					<p th:text="${rental.id}"></p>  
 					</td>
 					<td> 
-						<p th:text="${rental.bike.id}"></p>
+						<a style ="color:#7272F7" th:href="@{/bike/bikeInfo(id=${rental.bike.id})}"> <span style="text-decoration: underline"><p th:text="${rental.bike.id}"></p> </span></a>
 					</td>
 					<td>
 						<p th:text="${rental.rentDate}"></p>
