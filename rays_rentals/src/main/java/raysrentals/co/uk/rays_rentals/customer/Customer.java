@@ -81,4 +81,38 @@ public class Customer implements java.io.Serializable {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
+
+	public String getAddressLine1() {
+		return addressLine1;
+	}
+
+	public void setAddressLine1(String addressLine1) {
+		this.addressLine1 = addressLine1;
+	}
+
+	public String getAddressLine2() {
+		return addressLine2;
+	}
+
+	public void setAddressLine2(String addressLine2) {
+		this.addressLine2 = addressLine2;
+	}
+
+	public String getPostcode() {
+		return postcode;
+	}
+
+	public void setPostcode(String postcode) {
+		this.postcode = postcode;
+	}
+
+	public List<RentalRecord> getRentalRecords() {
+		return rentalRecords;
+	}
+
+	public void setRentalRecords(List<RentalRecord> rentalRecords) {
+		this.rentalRecords = rentalRecords;
+	}
+	
+	
 }
