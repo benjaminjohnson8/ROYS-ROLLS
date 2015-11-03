@@ -1,6 +1,5 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,7 +21,7 @@ import org.hibernate.annotations.Proxy;
 @Entity()
 @Table(name = "bike_record")
 @Proxy(lazy=false)
-//extends versioncontrolleed?
+//extends versioncontrolled?
 public class Bike implements java.io.Serializable   {
 
 	/**
@@ -63,7 +62,7 @@ public class Bike implements java.io.Serializable   {
 	
 	@OneToMany(mappedBy="bike")
 	@Fetch (FetchMode.SELECT)
-	private List<RentalRecord> rentalRecords = new ArrayList<RentalRecord>();
+	private List<BikeRentalRecord> bikeRentalRecords = new ArrayList<BikeRentalRecord>();
 
 	public Long getId() {
 		return id;
@@ -139,12 +138,13 @@ public class Bike implements java.io.Serializable   {
 		this.maintenanceRecords = maintenanceRecords;
 	}
 
-	public List<RentalRecord> getRentalRecords() {
-		return rentalRecords;
+	public List<BikeRentalRecord> getRentalRecords() {
+		return bikeRentalRecords;
 	}
 
-	public void setRentalRecords(List<RentalRecord> rentalRecords) {
-		this.rentalRecords = rentalRecords;
+	public void setRentalRecords(List<BikeRentalRecord> rentalRecords) {
+		this.bikeRentalRecords = rentalRecords;
 	}
-
+	
+	
 }

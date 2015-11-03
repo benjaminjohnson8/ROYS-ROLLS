@@ -1,6 +1,8 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +10,11 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import raysrentals.co.uk.rays_rentals.customer.Customer;
 @Entity()
@@ -34,9 +40,9 @@ public class RentalRecord {
 	@Column
 	private float amountPaid;
 	
-	@JoinColumn(name = "bike_id")
-	@ManyToOne()
-	private Bike bike;
+	@OneToMany(mappedBy="rentalRecord")
+	@Fetch (FetchMode.SELECT)
+	private List<BikeRentalRecord> bikesRentalRecord = new ArrayList<BikeRentalRecord>();
 	
 	@JoinColumn(name = "customer_id")
 	@ManyToOne()
@@ -93,4 +99,14 @@ public class RentalRecord {
 	public Long getId() {
 		return id;
 	}
+
+	public List<BikeRentalRecord> getBikesRentalRecord() {
+		return bikesRentalRecord;
+	}
+
+	public void setBikesRentalRecord(List<BikeRentalRecord> bikesRentalRecord) {
+		this.bikesRentalRecord = bikesRentalRecord;
+	}
+	
+	
 }
