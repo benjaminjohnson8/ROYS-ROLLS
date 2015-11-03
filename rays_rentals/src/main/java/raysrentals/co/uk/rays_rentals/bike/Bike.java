@@ -62,7 +62,7 @@ public class Bike implements java.io.Serializable   {
 	
 	@OneToMany(mappedBy="bike")
 	@Fetch (FetchMode.SELECT)
-	private List<BikeRentalRecord> bikeRentalRecords = new ArrayList<BikeRentalRecord>();
+	private List<RentalRecord> rentalRecords = new ArrayList<RentalRecord>();
 
 	public Long getId() {
 		return id;
@@ -138,13 +138,12 @@ public class Bike implements java.io.Serializable   {
 		this.maintenanceRecords = maintenanceRecords;
 	}
 
-	public List<BikeRentalRecord> getRentalRecords() {
-		return bikeRentalRecords;
+	public List<RentalRecord> getRentalRecords() {
+		return rentalRecords;
 	}
 
-	public void setRentalRecords(List<BikeRentalRecord> rentalRecords) {
-		this.bikeRentalRecords = rentalRecords;
-	}
-	
+	public void setRentalRecords(List<RentalRecord> rentalRecords) {
+		this.rentalRecords = rentalRecords;
+	}	
 	
 }

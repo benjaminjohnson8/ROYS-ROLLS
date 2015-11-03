@@ -30,6 +30,9 @@
 						Rental ID
 					</th>
 					<th>
+						Bike ID(s)
+					</th>		
+					<th>
 						Rent Date
 					</th>
 					<th>
@@ -56,13 +59,14 @@
 					<th>
 						Edit
 					</th>	
-					<th>
-						Bike ID(s)
-					</th>					
+								
 				</tr>
 					<tr th:each="rental : ${allRentals}">
 					<td>
 					<p th:text="${rental.id}"></p>  
+					</td>
+					<td> 
+						<p th:text="${rental.bike.id}"></p>
 					</td>
 					<td>
 						<p th:text="${rental.rentDate}"></p>
@@ -90,7 +94,7 @@
 					</td>
 					<td> 
 					
-						<a href="#"><span class="glyphicon glyphicon-trash"></span></a>
+						<p th:text="${rental.amountPaid}"></p>
 					
 					</td>
 					<td>

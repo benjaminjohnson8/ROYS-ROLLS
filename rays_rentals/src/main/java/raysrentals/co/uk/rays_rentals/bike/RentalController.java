@@ -13,6 +13,9 @@ public class RentalController {
 
 	@Autowired
 	RentalService rentalService;
+	
+	@Autowired
+	BikeService bikeService;
 	@RequestMapping(value="/allrentals")
 	public ModelAndView allRentals(){
 		ModelAndView mv = new ModelAndView("rental/rentalRecords");

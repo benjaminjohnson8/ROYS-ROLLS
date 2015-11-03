@@ -12,5 +12,4 @@ public interface BikeService  {
 	
 	public void removeBikeById(Long id);
 
-
 }

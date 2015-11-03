@@ -1,20 +1,15 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import raysrentals.co.uk.rays_rentals.customer.Customer;
 @Entity()
@@ -40,13 +35,13 @@ public class RentalRecord {
 	@Column
 	private float amountPaid;
 	
-	@OneToMany(mappedBy="rentalRecord")
-	@Fetch (FetchMode.SELECT)
-	private List<BikeRentalRecord> bikesRentalRecord = new ArrayList<BikeRentalRecord>();
-	
 	@JoinColumn(name = "customer_id")
 	@ManyToOne()
 	private Customer customer;
+	
+	@JoinColumn(name = "bike_id", foreignKey = @ForeignKey(name = "rental_record_bike_fkey"))
+	@ManyToOne()
+	private Bike bike;
 
 	public Date getRentDate() {
 		return rentDate;
@@ -100,13 +95,12 @@ public class RentalRecord {
 		return id;
 	}
 
-	public List<BikeRentalRecord> getBikesRentalRecord() {
-		return bikesRentalRecord;
+	public Bike getBike() {
+		return bike;
 	}
 
-	public void setBikesRentalRecord(List<BikeRentalRecord> bikesRentalRecord) {
-		this.bikesRentalRecord = bikesRentalRecord;
+	public void setBike(Bike bike) {
+		this.bike = bike;
 	}
-	
-	
+
 }

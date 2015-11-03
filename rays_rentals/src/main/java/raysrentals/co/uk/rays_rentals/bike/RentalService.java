@@ -8,4 +8,6 @@ public interface RentalService {
 
 	public List<RentalRecord> retrieveAllRentalRecord();
 
+	public RentalRecord getSingleRentalRecord(Long id);
+
 }

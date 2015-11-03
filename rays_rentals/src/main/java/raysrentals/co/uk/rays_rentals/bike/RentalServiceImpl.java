@@ -21,5 +21,9 @@ public class RentalServiceImpl extends HibernateJPABase<RentalRecord, Long> impl
 	public List<RentalRecord> retrieveAllRentalRecord(){
 		return super.findAll();
 	}
+	@Override
+	public RentalRecord getSingleRentalRecord(Long id){
+		return super.getReference(id);
+	}
 
 }
