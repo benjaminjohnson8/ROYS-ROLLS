@@ -51,7 +51,7 @@ public class BikeListController {
 	}
 	
 	@RequestMapping("/bikeInfo")
-	public ModelAndView bikeInfo(@ModelAttribute("bike") Bike product, BindingResult result,Long id) {
+	public ModelAndView bikeInfo(@ModelAttribute("maintenanceRecord") MaintenanceRecord maintenanceRecord, BindingResult result,Long id) {
 		ModelAndView mv = new ModelAndView("/bike/bikeInfo");
 		mv.addObject("bike", bikeService.retrieveBike(id));
 		List<MaintenanceRecord> maintenanceRecords = maintenanceService.retrieveAllMaintenanceHistoryForBike(id);
@@ -111,7 +111,7 @@ public class BikeListController {
 //		}
 		Date date = new Date();
 		bike.setPurchaseDate(date);
-		bike.setAvailable(false);
+		bike.setAvailable(true);
 		bikeService.createOrUpdateBike(bike);
 		return new ModelAndView("redirect:allbikes");
 	}
