@@ -5,11 +5,8 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,8 +14,6 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
 import raysrentals.co.uk.rays_rentals.bike.RentalRecord;
-
-
 
 @Entity
 @Table(name = "customer")
@@ -42,9 +37,14 @@ public class Customer implements java.io.Serializable {
 	@Column
 	private String phoneNo;
 	
-	@ManyToOne
-	@JoinColumn(name="address_id", foreignKey=@ForeignKey(name="accounts_address_fkey"))
-	private Address address;
+	@Column
+	private String addressLine1;
+	
+	@Column
+	private String addressLine2;
+	
+	@Column 
+	private String postcode;
 	
 	@OneToMany(mappedBy="customer")
 	@Fetch (FetchMode.SELECT)
@@ -81,8 +81,4 @@ public class Customer implements java.io.Serializable {
 	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
-	
-	
-	
-
 }

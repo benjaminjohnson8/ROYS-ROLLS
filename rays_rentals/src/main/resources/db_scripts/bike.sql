@@ -22,3 +22,14 @@ VALUES (890, sysDate(), 'fixed', sysDate(), 'wonky wheel', 109),
 (892, sysDate(), 'fixed', sysDate(), 'wonky wheel', 109),
 (893, sysDate(), 'fixed', sysDate(), 'wonky wheel', 110),
 (894, sysDate(), 'fixed', sysDate(), 'wonky wheel', 110);
+
+INSERT INTO customer(id, firstName, lastName, phoneNo, addressLine1, addressLine2, postcode)
+VALUES(300, 'Gareth', 'Barry', '01234567890', '1 Welbeck Avenue', 'Urmston', 'M415AP'),
+(301, 'Jordan', 'Henderson', '01234567890', '12 Welbeck Avenue', 'Urmston', 'M415AQ');
+
+
+INSERT INTO rental_record(id, amountPaid, rentDate, timeBackActual, timeBackDue, timeOut, customer_id)
+VALUES(400, 3.5, sysDate(), sysDate(), sysDate(), sysDate(), 300),
+(401, 3.5, sysDate(), sysDate(), sysDate(), sysDate(), 300),
+(402, 3.5, sysDate(), sysDate(), sysDate(), sysDate(), 301);
+

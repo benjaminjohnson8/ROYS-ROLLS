@@ -3,11 +3,13 @@ package raysrentals.co.uk.rays_rentals.bike;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-import raysrentals.co.uk.rays_rentals.customer.Address;
-
+@Entity
+@Table(name="disposal_details")
 public class DisposalDetails {
 	
 	@Id
@@ -18,14 +20,20 @@ public class DisposalDetails {
 	private String dealerName;
 	
 	@Column
-	private Address dealerAddress;
-	
-	@Column
 	private Date saleDate;
 	
 	@Column
 	private Float salePrice;
 
+	@Column
+	private String dealerAddressLine1;
+	
+	@Column
+	private String dealerAddressLine2;
+	
+	@Column 
+	private String dealerPostcode;
+	
 	public Long getId() {
 		return id;
 	}
@@ -40,14 +48,6 @@ public class DisposalDetails {
 
 	public void setDealerName(String dealerName) {
 		this.dealerName = dealerName;
-	}
-
-	public Address getDealerAddress() {
-		return dealerAddress;
-	}
-
-	public void setDealerAddress(Address dealerAddress) {
-		this.dealerAddress = dealerAddress;
 	}
 
 	public Date getSaleDate() {
