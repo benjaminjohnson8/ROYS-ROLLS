@@ -97,15 +97,7 @@ public class BikeListController {
 		stockService.removeStockById(id);
 		return new ModelAndView("redirect:allstock");
 	}
-	
-	@RequestMapping("/rentalrecords")
-	public ModelAndView rentalRecords() {
-		ModelAndView mv = new ModelAndView("/bike/rentalRecords");
-		
-		return mv;
-				
-	}
-	
+
 	@RequestMapping(value = "/addNewBike")
 	public ModelAndView newBikeInfo(@ModelAttribute("bike") Bike bike, BindingResult bindingResult) {
 //		ModelAndView mv = new ModelAndView("/bike/newBike");
