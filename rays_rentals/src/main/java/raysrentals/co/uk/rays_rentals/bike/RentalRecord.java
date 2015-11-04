@@ -15,9 +15,12 @@ import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import org.hibernate.annotations.Proxy;
+
 import raysrentals.co.uk.rays_rentals.customer.Customer;
 @Entity()
 @Table(name = "rental_record")
+@Proxy(lazy=false)
 public class RentalRecord {
 	
 	@Id
