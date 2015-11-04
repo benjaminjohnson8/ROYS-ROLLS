@@ -82,8 +82,11 @@
 					<td>
 						<p th:text="${bike.size}"></p>
 					</td>
-					<td>
-						<p th:text="${bike.available}"></p>
+					<td th:if="${bike.available == true}">
+						<p th:text="${bike.available}" style="background-color: green; color: white; text-align: center;"></p>
+					</td>
+					<td th:if="${bike.available == false}">
+						<p th:text="${bike.available}" style="background-color: red; color: white; text-align: center;"></p>
 					</td>
 					<td>
 					
