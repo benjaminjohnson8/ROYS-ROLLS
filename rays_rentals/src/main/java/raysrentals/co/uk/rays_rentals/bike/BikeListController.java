@@ -125,9 +125,9 @@ public class BikeListController {
 	}
 	
 	@RequestMapping(value = "/addNewRecord")
-	public ModelAndView addNewRecord(@ModelAttribute("maintenanceRecord") MaintenanceRecord maintenanceRecord) {
-		
-		maintenanceService.addRecord(maintenanceRecord);
+	public ModelAndView addNewRecord(@ModelAttribute("maintenanceRecord") MaintenanceRecord maintenanceRecord, Long id) {
+		Bike bike = bikeService.retrieveBike(id);
+		maintenanceService.addRecord(maintenanceRecord, bike);
 		return new ModelAndView("redirect:allbikes");
 	}
 	

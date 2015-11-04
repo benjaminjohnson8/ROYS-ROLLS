@@ -76,4 +76,12 @@ public class MaintenanceRecord {
 		this.actionDate = actionDate;
 	}
 
+	public Bike getBike() {
+		return bike;
+	}
+
+	public void setBike(Bike bike) {
+		this.bike = bike;
+	}
+
 }

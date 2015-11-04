@@ -106,9 +106,7 @@
 
 			<div class="table">
 			
-			<form method="post" class="form-group" id="historyTable" th:action="@{/bike/addNewRecord}" th:object="${maintenanceRecord}">
-			  		<!-- <input type="hidden" th:field="*{bike_id}" value="109"/>-->
-			 
+			<form method="post" class="form-group" id="historyTable" th:action="@{/bike/addNewRecord(id=${bike.id})}" th:object="${maintenanceRecord}">			 
 					<!-- Form Name -->
 					<h3>Add Record</h3>
 					

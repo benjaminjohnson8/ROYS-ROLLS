@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.hibernate.PersistentObjectException;
 import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,9 @@ public class MaintenanceServiceImpl extends HibernateJPABase<MaintenanceRecord, 
 	}
 
 	@Override
-	public MaintenanceRecord addRecord(MaintenanceRecord maintenanceRecord) {
-		return super.save(maintenanceRecord);
+	public MaintenanceRecord addRecord(MaintenanceRecord maintenanceRecord, Bike bike) {
+		maintenanceRecord.setBike(bike);
+		return super.merge(maintenanceRecord);	
 	}
 	
 	@Override
