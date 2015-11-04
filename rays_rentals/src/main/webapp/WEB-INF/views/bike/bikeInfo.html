@@ -102,37 +102,7 @@
 		<hr />
 		<div class="col-md-12">
 
-			<div class="btn-group btn-group-lg" role="group" aria-label="...">
-				<button id="hide" class="btn btn-primary">Maintenance</button>
-				<button id="show" class="btn btn-primary">Rent Bicycle</button>
-			</div>
-			<div class="rentForm">
-			<form class="form-group">
-					<!-- Form Name -->
-					<h3>Rent Bike</h3><div class="col-md-3"></div>
-					<div class="col-md-3">
-					<label>Name: <input type="text" class="form-control" placeholder="Name" /></label>
-					<label>Rental Start Date <input type="date" class="form-control" placeholder="Duration" /></label>
-					<label>Rental Return Date <input type="date" class="form-control" placeholder="Duration" /></label><br />
-					<input type="submit" class="btn btn-success" value="Save" />	
-							
-					</div>
-					
-					
-					<div class="col-md-3">
-					<label>Number: <input type="text" class="form-control" placeholder="Name" /></label>
-					<label>Adress Line 1 <input type="text" class="form-control" placeholder="Duration" /></label>
-					<label>Adress Line 2<input type="text" class="form-control" placeholder="Duration" /></label>
-					<input type="button" class="btn btn-danger" value="Cancel" />
-					
-					</div>
-					
-
-					
-
-				
-			</form>
-</div>
+			
 
 			<div class="table">
 			
@@ -191,20 +161,8 @@
 </body>
 <script>
 	$(document).ready(function() {
-		$(".table").hide();
-		$("#hide").click(function() {
-			$(".rentForm").hide();
-			$(".table").show();
-
-		});
-		$("#show").click(function() {
-			$(".rentForm").show();
-			$(".table").hide();
-			$("#historyTable").hide();
-
-			
-		});
-
+		
+		$("#historyTable").hide();
 		$("#manufacturer").click(function() {
 			prompt("Manufacturer", "textbox's intial text");
 			
