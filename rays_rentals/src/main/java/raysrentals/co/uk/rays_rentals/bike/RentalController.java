@@ -55,4 +55,13 @@ public class RentalController {
 		bikeService.createOrUpdateBike(bike);
 		return new ModelAndView("redirect:allRentals");
 	}
+	
+	@RequestMapping(value ="/editRentalRecord")
+	public ModelAndView editRentalRecord(Long id) {
+		ModelAndView mv = new ModelAndView("rental/newRentalRecord");
+		RentalRecord rentalRecord = rentalService.getSingleRentalRecord(id);
+		mv.addObject("rentalRecord", rentalRecord);
+		mv.addObject("title", "Edit Bike");
+		return mv;
+	}
 }
