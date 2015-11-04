@@ -19,35 +19,35 @@
   				<div class="col-md-8">
   				  <h2>Create New Rental Record</h2>
   				  <label>
-  					<input type="text" class="form-control form-padding" th:field="*{rentDate}" placeholder="Rent Date" />
+  					<input type="date" class="form-control form-padding" th:field="*{rentDate}" placeholder="Rent Date" />
   				  </label> 
   				  <label>
-  					<input type="text" class="form-control form-padding" th:field="*{timeOut}" placeholder="Time Out" /> 
+  					<input type="date" class="form-control form-padding" th:field="*{timeOut}" placeholder="Time Out" /> 
   				  </label>
   				   <label>
-  					<input type="text" class="form-control form-padding" th:field="*{timeBackDue}" placeholder="Return Date" /> 
+  					<input type="date" class="form-control form-padding" th:field="*{timeBackDue}" placeholder="Return Date" /> 
   				  </label>
   				   <label>
-  					<input type="text" class="form-control form-padding" th:field="*{timeBackActual}" placeholder="Time Returned" /> 
+  					<input type="date" class="form-control form-padding" th:field="*{timeBackActual}" placeholder="Time Returned" /> 
   				  </label>
   				  <label>
   					<input type="text" class="form-control form-padding" th:field="*{amountPaid}" placeholder="Amount Paid" /> 
   				  </label>
   				  <label>
-  					<select class="form-control form-padding" th:field="*{customer}">
+  					<select class="form-control form-padding" th:field="*{customer.id}">
   					<option value="">Customer</option>
 						<option
 							th:each="customer : ${customers}"
-							th:value="${customer}" th:text="|${customer.id} - ${customer.firstName} ${customer.lastName} |">
+							th:value="${customer.id}" th:text="|${customer.id} - ${customer.firstName} ${customer.lastName} |">
 						</option>
   					</select>
   				  </label>
   				  <label>
-  					<select class="form-control form-padding" th:field="*{bike}">
+  					<select class="form-control form-padding" th:field="*{bike.id}">
   					<option value="">Bike</option>
 						<option
 							th:each="bike : ${availableBikes}"
-							th:value="${bike}" th:text="|${bike.id} - ${bike.model} ${bike.manufacturer} |">
+							th:value="${bike.id}" th:text="|${bike.id} - ${bike.model} ${bike.manufacturer} |">
 						</option>
   					</select>
   				  </label>
