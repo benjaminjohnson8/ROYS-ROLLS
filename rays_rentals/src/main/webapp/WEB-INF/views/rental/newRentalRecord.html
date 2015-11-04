@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{view.index.title}">Welcome!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../../../resources/css/bootstrap.min.css" rel="stylesheet" media="screen" th:href="@{/resources/css/bootstrap.min.css}"/>
+    <link href="../../../resources/css/core.css" rel="stylesheet" media="screen" th:href="@{/resources/css/core.css}" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../../resources/js/bootstrap.min.js" th:src="@{/resources/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">&nbsp;</div>
+<div class="container">
+  	<form method="post" th:action="@{/rental/addNewRentalRecord}" th:object="${rentalRecord}">
+  		<input type="hidden" th:field="*{id}"/>
+  		<div class="container col-md-8 col-centered">
+  		<!--  add validation here when needed -->
+  			<div class="col-md-8">
+  				<div class="col-md-8">
+  				  <h2>Create New Rental Record</h2>
+  				  <label>
+  					<input type="text" class="form-control form-padding" th:field="*{rentDate}" placeholder="Rent Date" />
+  				  </label> 
+  				  <label>
+  					<input type="text" class="form-control form-padding" th:field="*{timeOut}" placeholder="Time Out" /> 
+  				  </label>
+  				   <label>
+  					<input type="text" class="form-control form-padding" th:field="*{timeBackDue}" placeholder="Return Date" /> 
+  				  </label>
+  				   <label>
+  					<input type="text" class="form-control form-padding" th:field="*{timeBackActual}" placeholder="Time Returned" /> 
+  				  </label>
+  				  <label>
+  					<input type="text" class="form-control form-padding" th:field="*{amountPaid}" placeholder="Amount Paid" /> 
+  				  </label>
+  				  <label>
+  					<select class="form-control form-padding" th:field="*{customer}">
+  					<option value="">Customer</option>
+						<option
+							th:each="customer : ${customers}"
+							th:value="${customer}" th:text="${customer.id}">
+						</option>
+  					</select>
+  				  </label>
+  					<div class="pull-right">
+							<a th:href="@{/bike/allbikes}"> 
+								<input type="button" class="btn btn-danger" value="Cancel" /></a>
+							<input type="submit" class="btn btn-success" value="Save" />	
+					</div>
+  				</div>
+  			</div>
+  		</div>
+  	
+  	</form>
+</div>
+</body>
+</html>
