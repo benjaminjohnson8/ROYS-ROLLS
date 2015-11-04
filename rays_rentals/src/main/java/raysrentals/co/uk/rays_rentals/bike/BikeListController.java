@@ -126,6 +126,7 @@ public class BikeListController {
 	
 	@RequestMapping(value = "/addNewRecord")
 	public ModelAndView addNewRecord(@ModelAttribute("maintenanceRecord") MaintenanceRecord maintenanceRecord) {
+		
 		maintenanceService.addRecord(maintenanceRecord);
 		return new ModelAndView("redirect:allbikes");
 	}

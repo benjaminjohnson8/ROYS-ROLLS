@@ -136,16 +136,16 @@
 
 			<div class="table">
 			
-			<form method="post" class="form-group" id="historyTable" th:action="@{bike/addNewRecord}" th:object="${maintenanceRecord}">
-			  		<input type="hidden" th:field="*{id}"/>
-			
+			<form method="post" class="form-group" id="historyTable" th:action="@{/bike/addNewRecord}" th:object="${maintenanceRecord}">
+			  		<!-- <input type="hidden" th:field="*{bike_id}" value="109"/>-->
+			 
 					<!-- Form Name -->
 					<h3>Add Record</h3>
 					
 				 	<label>Fault Details <input type="text" class="form-control" placeholder="Fault Details" th:field="*{faultDetails}" /></label>
-					<label>Fault Date <input type="date" class="form-control" placeholder="Fault Date" /></label>
-					<label>Action Taken <input type="text" class="form-control" placeholder="Action Taken" /></label>
-					<label>Action Date <input type="date" class="form-control" placeholder="Action Date" /></label><br />
+					<label>Fault Date <input type="date" class="form-control" placeholder="Fault Date" th:field="*{faultDate}" /></label>
+					<label>Action Taken <input type="text" class="form-control" placeholder="Action Taken" th:field="*{actionTaken}" /></label>
+					<label>Action Date <input type="date" class="form-control" placeholder="Action Date" th:field="*{actionDate}" /></label><br />
 			
 					<input type="submit" class="btn btn-success" value="Save" />	
 				

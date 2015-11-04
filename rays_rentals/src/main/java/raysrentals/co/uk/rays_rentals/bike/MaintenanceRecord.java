@@ -1,7 +1,5 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,18 +23,19 @@ public class MaintenanceRecord {
 	private String faultDetails;
 	
 	@Column
-	private Date faultDate;
+	private String faultDate;
 	
 	@Column
 	private String actionTaken;
 	
 	@Column
-	private Date actionDate;
+	private String actionDate;
 	
 	@JoinColumn(name = "bike_id")
 	@ManyToOne()
 	private Bike bike;
 	
+
 	public Long getId() {
 		return id;
 	}
@@ -53,11 +52,11 @@ public class MaintenanceRecord {
 		this.faultDetails = faultDetails;
 	}
 
-	public Date getFaultDate() {
+	public String getFaultDate() {
 		return faultDate;
 	}
 
-	public void setFaultDate(Date faultDate) {
+	public void setFaultDate(String faultDate) {
 		this.faultDate = faultDate;
 	}
 
@@ -69,11 +68,11 @@ public class MaintenanceRecord {
 		this.actionTaken = actionTaken;
 	}
 
-	public Date getActionDate() {
+	public String getActionDate() {
 		return actionDate;
 	}
 
-	public void setActionDate(Date actionDate) {
+	public void setActionDate(String actionDate) {
 		this.actionDate = actionDate;
 	}
 
