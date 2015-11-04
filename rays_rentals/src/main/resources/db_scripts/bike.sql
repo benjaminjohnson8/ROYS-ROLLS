@@ -29,7 +29,7 @@ VALUES(300, 'Gareth', 'Barry', '01234567890', '1 Welbeck Avenue', 'Urmston', 'M4
 
 
 INSERT INTO rental_record(id, amountPaid, rentDate, timeBackActual, timeBackDue, timeOut, customer_id, bike_id)
-VALUES(400, 3.5, sysDate(), sysDate(), sysDate(), sysDate(), 300, 110),
-(401, 3.5, sysDate(), sysDate(), sysDate(), sysDate(), 300, 110),
-(402, 3.5, sysDate(), sysDate(), sysDate(), sysDate(), 301, 111);
+VALUES(400, 3.5, '04-11-2015', '04-11-2015', '04-11-2015', '04-11-2015', 300, 110),
+(401, 3.5, '04-11-2015','04-11-2015', '04-11-2015', '04-11-2015', 300, 110),
+(402, 3.5, '04-11-2015', '04-11-2015', '04-11-2015', '04-11-2015', 301, 111);
 

@@ -38,8 +38,6 @@ public class RentalController {
 		ModelAndView mv = new ModelAndView("rental/newRentalRecord");
 		List<Customer> customers = customerService.retrieveAllCustomers();
 		List<Bike> availableBikes = bikeService.getAllAvailableBikes();
-		System.out.println(availableBikes);
-		System.out.println(availableBikes.size());
 		mv.addObject("customers", customers );
 		mv.addObject("availableBikes", availableBikes );
 		return mv;

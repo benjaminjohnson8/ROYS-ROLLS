@@ -11,29 +11,29 @@
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
 <div class="container">
-  	<form method="post" th:action="@{/rental/addNewRentalRecord}" th:object="${rentalRecord}">
+  	<form method="post" class="form-horizontal" th:action="@{/rental/addNewRentalRecord}" th:object="${rentalRecord}">
   		<input type="hidden" th:field="*{id}"/>
   		<div class="container col-md-8 col-centered">
   		<!--  add validation here when needed -->
   			<div class="col-md-8">
   				<div class="col-md-8">
   				  <h2>Create New Rental Record</h2>
-  				  <label>
+  				  <label>Rent Date
   					<input type="date" class="form-control form-padding" th:field="*{rentDate}" placeholder="Rent Date" />
   				  </label> 
-  				  <label>
+  				  <label>Time Out
   					<input type="date" class="form-control form-padding" th:field="*{timeOut}" placeholder="Time Out" /> 
   				  </label>
-  				   <label>
+  				   <label>Return Date
   					<input type="date" class="form-control form-padding" th:field="*{timeBackDue}" placeholder="Return Date" /> 
   				  </label>
-  				   <label>
+  				   <label>Time Returned
   					<input type="date" class="form-control form-padding" th:field="*{timeBackActual}" placeholder="Time Returned" /> 
   				  </label>
-  				  <label>
+  				  <label>Amount Paid
   					<input type="text" class="form-control form-padding" th:field="*{amountPaid}" placeholder="Amount Paid" /> 
   				  </label>
-  				  <label>
+  				  <label>Customer
   					<select class="form-control form-padding" th:field="*{customer.id}">
   					<option value="">Customer</option>
 						<option
@@ -42,7 +42,7 @@
 						</option>
   					</select>
   				  </label>
-  				  <label>
+  				  <label>Bike
   					<select class="form-control form-padding" th:field="*{bike.id}">
   					<option value="">Bike</option>
 						<option

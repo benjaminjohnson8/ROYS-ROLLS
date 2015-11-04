@@ -26,26 +26,18 @@ public class RentalRecord {
 	@Id
 	@GeneratedValue
 	private Long id;
+	//TODO:Change to dates
+	@Column
+	private String rentDate;
 	
 	@Column
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
-	private Date rentDate;
+	private String timeOut;
 	
 	@Column
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
-	private Date timeOut;
+	private String timeBackDue;
 	
 	@Column
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
-	private Date timeBackDue;
-	
-	@Column
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	@Temporal(TemporalType.DATE)
-	private Date timeBackActual;
+	private String timeBackActual;
 	
 	@Column
 	private float amountPaid;
@@ -58,35 +50,35 @@ public class RentalRecord {
 	@ManyToOne()
 	private Bike bike;
 
-	public Date getRentDate() {
+	public String getRentDate() {
 		return rentDate;
 	}
 
-	public void setRentDate(Date rentDate) {
+	public void setRentDate(String rentDate) {
 		this.rentDate = rentDate;
 	}
 
-	public Date getTimeOut() {
+	public String getTimeOut() {
 		return timeOut;
 	}
 
-	public void setTimeOut(Date timeOut) {
+	public void setTimeOut(String timeOut) {
 		this.timeOut = timeOut;
 	}
 
-	public Date getTimeBackDue() {
+	public String getTimeBackDue() {
 		return timeBackDue;
 	}
 
-	public void setTimeBackDue(Date timeBackDue) {
+	public void setTimeBackDue(String timeBackDue) {
 		this.timeBackDue = timeBackDue;
 	}
 
-	public Date getTimeBackActual() {
+	public String getTimeBackActual() {
 		return timeBackActual;
 	}
 
-	public void setTimeBackActual(Date timeBackActual) {
+	public void setTimeBackActual(String timeBackActual) {
 		this.timeBackActual = timeBackActual;
 	}
 
