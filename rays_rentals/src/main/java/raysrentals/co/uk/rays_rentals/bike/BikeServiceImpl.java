@@ -6,6 +6,8 @@ import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.googlecode.genericdao.search.Search;
+
 import raysrentals.co.uk.lib.dao.HibernateJPABase;
 
 @Service
@@ -29,6 +31,14 @@ public class BikeServiceImpl extends HibernateJPABase<Bike, Long> implements Bik
 	 @Override
 	 public void removeBikeById(Long id){
 		 super.removeById(id);
+	 }
+	 
+	 @Override
+	 public List<Bike>getAllAvailableBikes(){
+		 Search bikeSearch = new Search(Bike.class);
+		 bikeSearch.addFilterEqual("available", true);
+		 List<Bike> bikesRetrieved = super.search(bikeSearch);
+		 return bikesRetrieved;	
 	 }
 	 
 }

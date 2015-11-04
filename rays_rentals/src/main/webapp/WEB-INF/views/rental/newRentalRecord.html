@@ -38,7 +38,16 @@
   					<option value="">Customer</option>
 						<option
 							th:each="customer : ${customers}"
-							th:value="${customer}" th:text="${customer.id}">
+							th:value="${customer}" th:text="|${customer.id} - ${customer.firstName} ${customer.lastName} |">
+						</option>
+  					</select>
+  				  </label>
+  				  <label>
+  					<select class="form-control form-padding" th:field="*{bike}">
+  					<option value="">Bike</option>
+						<option
+							th:each="bike : ${availableBikes}"
+							th:value="${bike}" th:text="|${bike.id} - ${bike.model} ${bike.manufacturer} |">
 						</option>
   					</select>
   				  </label>

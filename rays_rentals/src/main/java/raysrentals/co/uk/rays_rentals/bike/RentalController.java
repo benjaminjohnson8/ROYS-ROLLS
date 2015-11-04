@@ -21,10 +21,10 @@ public class RentalController {
 	
 	@Autowired
 	CustomerService customerService;
-
 	
 	@Autowired
 	BikeService bikeService;
+	
 	@RequestMapping(value="/allrentals")
 	public ModelAndView allRentals(){
 		ModelAndView mv = new ModelAndView("rental/rentalRecords");
@@ -37,7 +37,11 @@ public class RentalController {
 	public ModelAndView newRentalPage(@ModelAttribute("rentalRecord") RentalRecord rentalRecord){
 		ModelAndView mv = new ModelAndView("rental/newRentalRecord");
 		List<Customer> customers = customerService.retrieveAllCustomers();
+		List<Bike> availableBikes = bikeService.getAllAvailableBikes();
+		System.out.println(availableBikes);
+		System.out.println(availableBikes.size());
 		mv.addObject("customers", customers );
+		mv.addObject("availableBikes", availableBikes );
 		return mv;
 	}
 	
