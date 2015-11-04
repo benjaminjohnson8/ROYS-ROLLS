@@ -47,13 +47,13 @@ public class RentalController {
 	
 	@RequestMapping(value = "/addNewRentalRecord")
 	public ModelAndView newBikeInfo(@ModelAttribute("rentalRecord") RentalRecord rentalRecord) {
-
-		rentalService.createOrUpdateRentalRecord(rentalRecord);
-		Bike bike = rentalRecord.getBike();
 		
+		Long bikeId = rentalRecord.getBike().getId();
+		Bike bike =bikeService.retrieveBike(bikeId);
 		bike.setAvailable(false);
+		rentalService.createOrUpdateRentalRecord(rentalRecord);
 		bikeService.createOrUpdateBike(bike);
-		return new ModelAndView("redirect:allRentals");
+		return new ModelAndView("redirect:allrentals");
 	}
 	
 	@RequestMapping(value ="/editRentalRecord")
