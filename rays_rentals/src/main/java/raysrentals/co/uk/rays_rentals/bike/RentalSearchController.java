@@ -11,7 +11,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.googlecode.genericdao.search.SearchResult;
-
+/**
+ * 
+ * @author ROakley
+ *
+ */
 @Controller
 @RequestMapping("/search")
 public class RentalSearchController {

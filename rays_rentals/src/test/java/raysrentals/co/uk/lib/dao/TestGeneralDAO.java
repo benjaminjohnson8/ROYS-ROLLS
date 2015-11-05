@@ -15,8 +15,6 @@ import com.googlecode.genericdao.search.jpa.JPASearchProcessor;
 /**
  * General service to manage a hibernate entity. 
  * 
- * Should only be used for test applications 
- * @author selliott
  */
 @Repository
 public class TestGeneralDAO extends GeneralDAOImpl

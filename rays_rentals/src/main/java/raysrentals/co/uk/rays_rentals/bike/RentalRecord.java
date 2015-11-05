@@ -1,7 +1,5 @@
 package raysrentals.co.uk.rays_rentals.bike;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ForeignKey;
@@ -10,14 +8,15 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
-
-import org.springframework.format.annotation.DateTimeFormat;
 
 import org.hibernate.annotations.Proxy;
 
 import raysrentals.co.uk.rays_rentals.customer.Customer;
+/**
+ * 
+ * @author ROakley
+ *
+ */
 @Entity()
 @Table(name = "rental_record")
 @Proxy(lazy=false)

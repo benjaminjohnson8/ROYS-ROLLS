@@ -2,7 +2,11 @@ package raysrentals.co.uk.rays_rentals.bike;
 
 import raysrentals.co.uk.lib.search.Search;
 import raysrentals.co.uk.rays_rentals.customer.Customer;
-
+/**
+ * 
+ * @author ROakley
+ *
+ */
 public class RentalSearch extends Search<RentalRecord> {
 
 	public RentalSearch() {

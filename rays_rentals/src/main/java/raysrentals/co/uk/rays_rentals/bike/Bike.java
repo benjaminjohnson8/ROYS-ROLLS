@@ -20,7 +20,11 @@ import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 import org.hibernate.annotations.Proxy;
 import org.springframework.format.annotation.DateTimeFormat;
-
+/**
+ * 
+ * @author ROakley
+ *
+ */
 @Entity()
 @Table(name = "bike_record")
 @Proxy(lazy=false)

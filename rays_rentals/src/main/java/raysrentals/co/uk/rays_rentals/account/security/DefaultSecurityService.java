@@ -9,13 +9,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import raysrentals.co.uk.lib.security.BFSSecurityService;
-
-
-
 /**
- * Alternate security service that does nothing. This allows testing and development without the 
- * need for Stormpath
- * @author selliott
+ * not needed?
+ * @author ROakley
+ *
  */
 @Service
 @Profile(value={"default", "test"})
