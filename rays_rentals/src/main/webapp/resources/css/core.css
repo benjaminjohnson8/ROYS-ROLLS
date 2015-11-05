@@ -30,6 +30,20 @@ body {
 	margin-left: -115px;
 }
 
+.search-container {
+	max-width: 1000px;
+	margin-top: 5px;
+	padding-top: 5px;
+}
+
+.timeback-input{
+	padding-top: 5px;
+}
+.newsearch-input{
+	padding-top: 7px;
+	display: inline-block;
+}
+
 .sidebar ul li p {
 	font-size: 1em;
 	padding: 0.5em;

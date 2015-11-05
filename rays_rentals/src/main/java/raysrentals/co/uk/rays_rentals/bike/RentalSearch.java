@@ -82,7 +82,7 @@ public class RentalSearch extends Search<RentalRecord> {
 	
 	public void setBikeModel(String bikeModel)
 	{
-		if(null != bikeModel)
+		if(null != bikeModel && !bikeModel.isEmpty())
 		{
 			super.addFilterEqual("bike.model", bikeModel);
 		}
