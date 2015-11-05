@@ -47,10 +47,13 @@ public class RentalController {
 	public ModelAndView newBikeInfo(@ModelAttribute("rentalRecord") RentalRecord rentalRecord) {
 		
 		Long bikeId = rentalRecord.getBike().getId();
-		Bike bike =bikeService.retrieveBike(bikeId);
-		bike.setAvailable(false);
+		if(bikeId !=null){
+			Bike bike =bikeService.retrieveBike(bikeId);
+			bike.setAvailable(false);
+			bikeService.createOrUpdateBike(bike);
+		}
 		rentalService.createOrUpdateRentalRecord(rentalRecord);
-		bikeService.createOrUpdateBike(bike);
+		
 		return new ModelAndView("redirect:allrentals");
 	}
 	
@@ -58,6 +61,7 @@ public class RentalController {
 	public ModelAndView editRentalRecord(Long id) {
 		ModelAndView mv = new ModelAndView("rental/newRentalRecord");
 		RentalRecord rentalRecord = rentalService.getSingleRentalRecord(id);
+		mv.addObject("title", "Update Rental Record");
 		mv.addObject("rentalRecord", rentalRecord);
 		mv.addObject("title", "Edit Bike");
 		return mv;

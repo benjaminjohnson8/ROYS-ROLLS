@@ -3,6 +3,7 @@ package raysrentals.co.uk.rays_rentals.customer;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -45,8 +46,8 @@ public class Customer implements java.io.Serializable {
 	
 	@Column 
 	private String postcode;
-	
-	@OneToMany(mappedBy="customer")
+
+	@OneToMany(mappedBy="customer",	cascade=CascadeType.ALL)
 	@Fetch (FetchMode.SELECT)
 	private List<RentalRecord> rentalRecords = new ArrayList<RentalRecord>();
 

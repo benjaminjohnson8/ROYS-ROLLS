@@ -17,7 +17,10 @@
   		<!--  add validation here when needed -->
   			<div class="col-md-8">
   				<div class="col-md-8">
-  				  <h2>Create New Rental Record</h2>
+  					<div th:if="${title == null}">
+  					<h2>Create New Record</h2>
+  					</div>
+  				   <h2 th:text="${title}">Create New Record</h2>
   				  <label>Rent Date
   					<input type="date" class="form-control form-padding" th:field="*{rentDate}" placeholder="Rent Date" />
   				  </label> 
