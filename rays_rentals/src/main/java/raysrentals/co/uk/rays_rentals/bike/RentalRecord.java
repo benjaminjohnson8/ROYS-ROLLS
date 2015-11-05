@@ -50,6 +50,13 @@ public class RentalRecord {
 	@ManyToOne()
 	private Bike bike;
 
+	public Long getId() {
+		return id;
+	}
+	
+	public Long setId() {
+		return id;
+	}
 	public String getRentDate() {
 		return rentDate;
 	}
@@ -98,9 +105,7 @@ public class RentalRecord {
 		this.amountPaid = amountPaid;
 	}
 
-	public Long getId() {
-		return id;
-	}
+	
 
 	public Bike getBike() {
 		return bike;

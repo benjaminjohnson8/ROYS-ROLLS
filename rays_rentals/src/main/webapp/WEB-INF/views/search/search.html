@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+   <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="../../../resources/css/bootstrap.min.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/bootstrap.min.css}" />
+<link href="../../../resources/css/core.css" rel="stylesheet"
+	media="screen" th:href="@{/resources/css/core.css}" />
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="../../../resources/js/bootstrap.min.js"
+	th:src="@{/resources/js/bootstrap.min.js}"></script>
+<script src="../../../resources/js/main.js"
+	th:src="@{/resources/js/main.js}"></script>
+</head>
+<body>
+<div th:replace="fragments/header :: header">&nbsp;</div>
+		<div class="col-md-4 col-centered">
+			<h2>Search</h2>
+			<hr></hr>
+		</div>
+		<div class="col-md-12 col-centered search-container">
+		<div>
+			<form style="text-align: center;" class="col-centered" method="post" th:action="@{/search}" th:object="${rentalSearch}">
+				<!-- <div class="search-input">
+					<input type="text" class="form-control inline-block" placeholder="Customer Name" th:field="*{lastName}"/>
+				</div> -->
+				<div class="search-input">
+					<input type="text" class="form-control inline-block" placeholder="Rental Id" th:field="*{rentalId}"/>
+				</div>
+				<!-- <div class="search-input">
+					<input type="text" class="form-control inline-block" placeholder="Bike" th:field="*{bikeModel}"/>
+				</div> -->
+				<div class="search-input">
+					<input type="text" class="form-control inline-block" placeholder="Rent Date - dd-mm-yyyy" th:field="*{rentDate}"/>
+				</div>
+				<div class="search-input">
+					<input type="text" class="form-control inline-block" placeholder="Time Out - dd-mm-yyyy" th:field="*{timeOut}"/>
+				</div>
+				<div class="search-input">
+					<input type="text" class="form-control inline-block" placeholder="Time back Due - dd-mm-yyyy" th:field="*{timeBackDue}"/>
+				</div>
+				<div class="input-group input-group-lg col-md-4 col-centered">
+					<input type="submit" class="btn btn-success" value="Search"></input>
+				</div>
+			</form>
+		</div>
+		</div>
+		<div class="col-md-8 col-centered" th:if="${searchResults}">
+			<h3>Search Results</h3>
+			<div class="table-scroll">
+			<table class="table table-striped">
+				<tr>
+					<th>
+						Rental Id
+					</th>
+					<th>
+						Customer Last Name
+					</th>
+					<th>
+						Bike Model
+					</th>
+					<th>
+						Rent Date
+					</th>
+					<th>
+						Time Out 
+					</th>
+				</tr>
+				<tr th:each="result : ${searchResults}">
+						<td th:text="${result.id}"></td>
+						<td th:text="${result.customer.lastName}"></td>
+						<td th:text="${result.bike.model}"></td>
+						<td th:text="${result.rentDate}"></td>
+						<td th:text="${result.timeOut}"></td>							
+				</tr>
+			</table>
+			</div>
+		</div>
+
+    </body>
+</html>
