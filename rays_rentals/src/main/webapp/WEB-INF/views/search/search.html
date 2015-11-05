@@ -16,16 +16,16 @@
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
 		<div class="col-md-4 col-centered">
-			<h2>Search</h2>
+			<h2>Rental Search</h2>
 			<hr></hr>
 		</div>
 		<div class="col-md-12 col-centered search-container">
 		<div>
 			<form style="text-align: center;" class="col-centered" method="post" th:action="@{/search}" th:object="${rentalSearch}">
-				<!-- <div class="search-input">
-					<input type="text" class="form-control inline-block" placeholder="Customer Name" th:field="*{lastName}"/>
-				</div> -->
 				<div class=" col-md-3 col-centered search-input">
+					<input type="text" class="form-control inline-block" placeholder="Customer Last Name" th:field="*{lastName}"/>
+				</div>
+				<div class="col-md-3 col-centered search-input">
 					<input type="text" class="form-control inline-block" placeholder="Rental Id" th:field="*{rentalId}"/>
 				</div>
 				<div class=" col-md-3 col-centered search-input">
@@ -34,7 +34,7 @@
 				<div class=" col-md-3 col-centered search-input">
 					<input type="text" class="form-control inline-block" placeholder="Rent Date - dd-mm-yyyy" th:field="*{rentDate}"/>
 				</div>
-				<div class=" col-md-3 col-centered search-input">
+				<div class=" col-md-3 col-centered timeback-input">
 					<input type="text" class="form-control inline-block" placeholder="Time Out - dd-mm-yyyy" th:field="*{timeOut}"/>
 				</div>
 				<div class=" col-md-3 col-centered timeback-input">

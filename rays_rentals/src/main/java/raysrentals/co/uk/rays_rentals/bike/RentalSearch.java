@@ -93,30 +93,30 @@ public class RentalSearch extends Search<RentalRecord> {
 		return (String)getSearchParam("bike.model");
 	}
 	
-//	public void setCustomer(Customer customer )
-//	{
-//		if(null != customer)
-//		{
-//			super.addFilterEqual("customer", customer);
-//		}
-//		addSearchParam("customer", customer);
-//	}
-//	public Customer getCustomer()
-//	{
-//		return (Customer)getSearchParam("customer");
-//	}
+	public void setCustomer(Customer customer )
+	{
+		if(null != customer)
+		{
+			super.addFilterEqual("customer", customer);
+		}
+		addSearchParam("customer", customer);
+	}
+	public Customer getCustomer()
+	{
+		return (Customer)getSearchParam("customer");
+	}
 	
-//	public void setLastName(String lastName)
-//	{
-//		if(null != lastName && !lastName.isEmpty())
-//		{
-//			super.addFilterLike("customer.lastName", lastName.contains("%") ? lastName : lastName+"%");
-//		}
-//		addSearchParam("customer.lastName", lastName);
-//	}
-//	public String getLastName()
-//	{
-//		return (String)getSearchParam("customer.lastName");
-//	}
+	public void setLastName(String lastName)
+	{
+		if(null != lastName && !lastName.isEmpty())
+		{
+			super.addFilterEqual("customer.lastName", lastName);
+		}
+		addSearchParam("customer.lastName", lastName);
+	}
+	public String getLastName()
+	{
+		return (String)getSearchParam("customer.lastName");
+	}
 
 }
