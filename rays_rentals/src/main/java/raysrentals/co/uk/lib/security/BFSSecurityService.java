@@ -3,10 +3,6 @@
  */
 package raysrentals.co.uk.lib.security;
 
-/**
- * Security service to provide utility methods for the authenticated user.
- * @author selliott
- */
 public interface BFSSecurityService
 {
 	/**

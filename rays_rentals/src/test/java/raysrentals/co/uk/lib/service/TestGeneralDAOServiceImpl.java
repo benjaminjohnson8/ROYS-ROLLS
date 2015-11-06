@@ -14,10 +14,7 @@ import com.googlecode.genericdao.dao.jpa.GeneralDAOImpl;
 import com.googlecode.genericdao.search.jpa.JPASearchProcessor;
 
 /**
- * General service to manage a hibernate entity. 
- * 
- * Should only be used for test applications 
- * @author selliott
+ * General service to manage a hibernate entity
  */
 @Service
 @Transactional

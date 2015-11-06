@@ -11,7 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 import ch.qos.logback.core.rolling.helper.RenameUtil;
 import raysrentals.co.uk.rays_rentals.customer.Customer;
 import raysrentals.co.uk.rays_rentals.customer.CustomerService;
-
+/**
+ * 
+ * @author ROakley
+ *
+ */
 @Controller
 @RequestMapping("/rental")
 public class RentalController {
