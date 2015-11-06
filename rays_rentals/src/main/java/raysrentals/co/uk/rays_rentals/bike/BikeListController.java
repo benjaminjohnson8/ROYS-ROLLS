@@ -74,6 +74,7 @@ public class BikeListController {
 	@RequestMapping("/newstock")
 	public ModelAndView newStock(@ModelAttribute("stock") Stock product, BindingResult result) {
 		ModelAndView mv = new ModelAndView("/bike/newStock");
+		mv.addObject("title", "New Stock");
 		return mv;
 				
 	}
