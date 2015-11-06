@@ -8,4 +8,6 @@ public interface CustomerService {
 
 	public List<Customer> retrieveAllCustomers();
 
+	public Customer createOrUpdateCustomer(Customer customer);
+
 }

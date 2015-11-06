@@ -48,7 +48,7 @@ public class RentalController {
 	}
 	
 	@RequestMapping(value = "/addNewRentalRecord")
-	public ModelAndView newBikeInfo(@ModelAttribute("rentalRecord") RentalRecord rentalRecord) {
+	public ModelAndView newRentalInfo(@ModelAttribute("rentalRecord") RentalRecord rentalRecord) {
 		
 		Long bikeId = rentalRecord.getBike().getId();
 		if(bikeId !=null){

@@ -18,5 +18,10 @@ public class CustomerServiceImpl extends HibernateJPABase<Customer, Long> implem
 	public List<Customer> retrieveAllCustomers(){
 		return super.findAll();
 	}
+	
+	@Override
+	public Customer createOrUpdateCustomer(Customer customer){
+		return super.save(customer);
+	}
 
 }
