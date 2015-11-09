@@ -36,24 +36,39 @@
   				  <label>Amount Paid
   					<input type="text" class="form-control form-padding" th:field="*{amountPaid}" placeholder="Amount Paid" /> 
   				  </label>
-  				  <label>Customer
-  					<select class="form-control form-padding" th:field="*{customer.id}">
-  					<option value="">Customer</option>
-						<option
-							th:each="customer : ${customers}"
-							th:value="${customer.id}" th:text="|${customer.id} - ${customer.firstName} ${customer.lastName} |">
-						</option>
-  					</select>
-  				  </label>
-  				  <label>Bike
-  					<select class="form-control form-padding" th:field="*{bike.id}">
-  					<option value="">Bike</option>
-						<option
-							th:each="bike : ${availableBikes}"
-							th:value="${bike.id}" th:text="|${bike.id} - ${bike.model} ${bike.manufacturer} |">
-						</option>
-  					</select>
-  				  </label>
+  				  <div th:if="${customerRetrieved == null}">
+	  				  <label>Customer
+	  					<select class="form-control form-padding" th:field="*{customer.id}">
+	  					<option value="">Customer</option>
+							<option
+								th:each="customer : ${customers}"
+								th:value="${customer.id}" th:text="|${customer.id} - ${customer.firstName} ${customer.lastName} |">
+							</option>
+	  					</select>
+	  				  </label>
+  				  </div>
+  				 <div th:if="${customerRetrieved != null}">
+  				 <label>Customer id
+  				   		<input type="text" class="form-control form-padding" th:value="${customerRetrieved.id}" id="customer.id" name="customer.id"/>
+  				 </label>
+  				 </div>
+  				  <div th:if="${bikeRetrieved == null}">
+	  				  <label>Bike
+	  					<select class="form-control form-padding" th:field="*{bike.id}">
+	  					<option value="">Bike</option>
+							<option
+								th:each="bike : ${availableBikes}"
+								th:value="${bike.id}" th:text="|${bike.id} - ${bike.model} ${bike.manufacturer} |">
+							</option>
+	  					</select>
+	  				  </label>
+  				  </div>
+  				  <label>Bike id
+  				   <div th:if="${bikeRetrieved != null}">
+  				   		<input type="text" class="form-control form-padding" th:value="${bikeRetrieved.id}" id="bike.id" name="bike.id"/>
+  				 </div>
+  				 </label>
+  				  
   					<div class="pull-right">
 							<a th:href="@{/rental/allrentals}"> 
 								<input type="button" class="btn btn-danger" value="Cancel" /></a>

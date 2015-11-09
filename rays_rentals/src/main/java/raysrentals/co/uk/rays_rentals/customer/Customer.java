@@ -13,11 +13,13 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.hibernate.annotations.Proxy;
 
 import raysrentals.co.uk.rays_rentals.bike.RentalRecord;
 
 @Entity
 @Table(name = "customer")
+@Proxy(lazy=false)
 //version controlled
 public class Customer implements java.io.Serializable {
 	/**

@@ -60,13 +60,22 @@ public class RentalController {
 		
 		return new ModelAndView("redirect:allrentals");
 	}
-	
+	//TODO IT BLOODY CREATES RATHER THAN EDITS?!!!!!!!!!!!!!!!!!
 	@RequestMapping(value ="/editRentalRecord")
 	public ModelAndView editRentalRecord(Long id) {
 		ModelAndView mv = new ModelAndView("rental/newRentalRecord");
 		RentalRecord rentalRecord = rentalService.getSingleRentalRecord(id);
-		mv.addObject("title", "Update Rental Record");
+		
+		Long bikeId = rentalRecord.getBike().getId();
+		Bike bikeRetieved = bikeService.retrieveBike(bikeId);
+		
+		Long customerId = rentalRecord.getCustomer().getId();
+		Customer customerRetrieved = customerService.retrieveCustomer(customerId);
+		//had to add the bike and customer as model objects 
 		mv.addObject("rentalRecord", rentalRecord);
+		mv.addObject("title", "Update Rental Record");
+		mv.addObject("customerRetrieved", customerRetrieved);
+		mv.addObject("bikeRetrieved", bikeRetieved);
 		mv.addObject("title", "Edit Bike");
 		return mv;
 	}
