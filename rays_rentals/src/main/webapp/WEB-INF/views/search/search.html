@@ -66,13 +66,18 @@
 					<th>
 						Time Out 
 					</th>
+					<th>
+						Time Back Due
+					</th>
 				</tr>
 				<tr th:each="result : ${searchResults}">
 						<td th:text="${result.id}"></td>
 						<td th:text="${result.customer.lastName}"></td>
 						<td th:text="${result.bike.model}"></td>
 						<td th:text="${result.rentDate}"></td>
-						<td th:text="${result.timeOut}"></td>							
+						<td th:text="${result.timeOut}"></td>	
+						<td th:text="${result.timeBackDue}"></td>							
+												
 				</tr>
 			</table>
 			</div>
