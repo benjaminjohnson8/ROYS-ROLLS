@@ -61,6 +61,7 @@ public class RentalController {
 		return new ModelAndView("redirect:allrentals");
 	}
 	//TODO IT BLOODY CREATES RATHER THAN EDITS?!!!!!!!!!!!!!!!!!
+	//The id in the new rental info is null when it shouldnt be
 	@RequestMapping(value ="/editRentalRecord")
 	public ModelAndView editRentalRecord(Long id) {
 		ModelAndView mv = new ModelAndView("rental/newRentalRecord");
