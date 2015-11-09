@@ -25,6 +25,8 @@ public class BikeListController {
 	StockService stockService;
 	@Autowired
 	MaintenanceService maintenanceService;
+	@Autowired 
+	BikeValidator bikeValidator;
 	
 	@RequestMapping(value = "/allbikes")
 	public ModelAndView allBikes(){
@@ -37,7 +39,6 @@ public class BikeListController {
 	@RequestMapping("/newbike")
 	public ModelAndView newproduct(@ModelAttribute("bike") Bike product, BindingResult result) {
 		ModelAndView mv = new ModelAndView("/bike/newBike");
-		mv.addObject("title", "New Bike");
 		return mv;
 				
 	}
@@ -102,15 +103,14 @@ public class BikeListController {
 
 	@RequestMapping(value = "/addNewBike")
 	public ModelAndView newBikeInfo(@ModelAttribute("bike") Bike bike, BindingResult bindingResult) {
-//		ModelAndView mv = new ModelAndView("/bike/newBike");
-		
-		//add bike validation later
-	//	bikeValidator.validate(bike, bindingResult);
-//		if(bindingResult.hasErrors())
-//		{
-//			mv.addObject("errors", bindingResult);
-//			return mv;
-//		}
+		ModelAndView mv = new ModelAndView("/bike/newBike");
+		//validation for bike, prevents empty data being added to the database
+		bikeValidator.validate(bike, bindingResult);
+		if(bindingResult.hasErrors())
+		{
+			mv.addObject("errors", bindingResult);
+			return mv;
+		}
 		Date date = new Date();
 		bike.setPurchaseDate(date);
 		bike.setAvailable(true);
