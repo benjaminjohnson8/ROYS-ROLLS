@@ -63,11 +63,12 @@
 	  					</select>
 	  				  </label>
   				  </div>
-  				  <label>Bike id
   				   <div th:if="${bikeRetrieved != null}">
-  				   		<input type="text" class="form-control form-padding" th:value="${bikeRetrieved.id}" id="bike.id" name="bike.id"/>
+  				  <label>Bike id
+  					<input type="text" class="form-control form-padding" th:value="${bikeRetrieved.id}" id="bike.id" name="bike.id"/>
+  				  </label>
   				 </div>
-  				 </label>
+  				
   				  
   					<div class="pull-right">
 							<a th:href="@{/rental/allrentals}"> 
