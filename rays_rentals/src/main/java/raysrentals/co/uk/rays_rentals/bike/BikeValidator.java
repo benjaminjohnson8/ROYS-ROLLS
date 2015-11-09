@@ -27,6 +27,16 @@ public class BikeValidator implements Validator {
 			errors.rejectValue("price", "bike.price.empty.message");
 
 		}
+		
+		if(bike.getClassification()==null){
+			errors.rejectValue("price", "bike.classification.empty.message");
+
+		}
+		
+		if(bike.getSize()==null){
+			errors.rejectValue("price", "bike.size.empty.message");
+
+		}
 	}
 
 }
