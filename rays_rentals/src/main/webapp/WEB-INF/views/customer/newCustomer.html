@@ -14,6 +14,7 @@
    <body>
       <div th:replace="fragments/header :: header">&nbsp;</div>
       <div class="container">
+      <h2>Create New Customer</h2>
       	  <div class="col-md-8" if ="${redirectAttribute != null}" >
      		<h4 style="color: red; margin-left: 30px;" th:text = "${redirectAttribute}"></h4>
    		 </div>
@@ -24,7 +25,6 @@
                <!--  add validation here when needed -->
                <div class="col-md-8">
                   <div class="col-md-8">
-                     <h2 th:text="${title}">Create New Customer</h2>
                      <label> 
                      <input type="text"
                         class="form-control form-padding" th:field="*{firstName}"
