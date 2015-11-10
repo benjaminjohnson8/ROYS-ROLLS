@@ -18,7 +18,7 @@ import raysrentals.co.uk.lib.security.BFSSecurityService;
 
 /**
  * Hibernate intercepter to set the audit fields on all model objects when saving to the DB
- * @author Stephen Elliott
+ * Not implemented yet!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
  */
 @Component("hibernateAuditInterceptor")
 public class HibernateAuditInterceptor extends EmptyInterceptor
