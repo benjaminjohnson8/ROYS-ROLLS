@@ -8,7 +8,6 @@ import javax.persistence.Version;
  * Parent model class for all that have a version number to guard against dual updates.
  * See Optimistic Locking.
  * 
- * @author MWalsh
  */
 @MappedSuperclass
 public abstract class VersionControlled extends ModelBase

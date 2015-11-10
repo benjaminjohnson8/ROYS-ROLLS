@@ -12,7 +12,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * Super class to hold all the audit fields.
- * @author MWalsh
  */
 @MappedSuperclass
 public abstract class ModelBase implements Serializable

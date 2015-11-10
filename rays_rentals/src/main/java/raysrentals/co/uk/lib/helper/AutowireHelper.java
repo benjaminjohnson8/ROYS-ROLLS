@@ -10,7 +10,6 @@ import org.springframework.context.ApplicationContextAware;
  * We use this to autowire services into entity listner classes as Hibernate instantiates the entity listener before Spring 
  * can autowire the beans and therefore all the autowired beans are null, hence the requirement for this class.
  * 
- * @author MWalsh
  */
 public final class AutowireHelper implements ApplicationContextAware {
 
