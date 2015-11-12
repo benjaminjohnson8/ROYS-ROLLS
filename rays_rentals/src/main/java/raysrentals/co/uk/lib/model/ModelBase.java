@@ -11,7 +11,7 @@ import org.hibernate.annotations.Type;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
- * Super class to hold all the audit fields.
+ * not implemented
  */
 @MappedSuperclass
 public abstract class ModelBase implements Serializable

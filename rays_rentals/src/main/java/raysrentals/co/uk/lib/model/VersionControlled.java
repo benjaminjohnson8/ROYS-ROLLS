@@ -5,8 +5,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 /**
- * Parent model class for all that have a version number to guard against dual updates.
- * See Optimistic Locking.
+ * Not implemented
  * 
  */
 @MappedSuperclass

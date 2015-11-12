@@ -18,8 +18,7 @@ import raysrentals.co.uk.lib.search.SearchResult;
 import com.googlecode.genericdao.search.jpa.JPASearchProcessor;
 
 /**
- * Hibernate implementation of the CRUD DAO.
- * @author Stephen
+ *
  */
 @Repository
 public class TestHibernateSearchDAO 

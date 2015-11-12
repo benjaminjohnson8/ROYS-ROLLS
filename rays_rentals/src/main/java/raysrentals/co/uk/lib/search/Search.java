@@ -15,7 +15,6 @@ import org.springframework.util.StringUtils;
  * simply implemented with the
  * <code>com.googlecode.genericdao.search.Search</code> class.
  * 
- * @author Stephen Elliott
  */
 public abstract class Search<M> extends com.googlecode.genericdao.search.Search implements SearchModel<M>
 {
