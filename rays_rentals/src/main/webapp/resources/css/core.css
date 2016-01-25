@@ -1,5 +1,5 @@
 body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    padding-top: 45px; /* 60px to make the container go all the way to the bottom of the topbar */
     padding-bottom: 40px;
     background-color: white;
 }
@@ -163,7 +163,7 @@ label {
 
 .blue-nav{
 	background-color: #006699;
-	border-color:white;
+	border-color:black;
 }
 
 .whiteLink{
@@ -181,4 +181,45 @@ label {
 }
 .custom-bar{
 	margin-left: 100px;
+}
+
+.slide1, .slide2, .slide3 {
+	min-height: 450px; /* Must have a height or min-height set due to use of background images */
+	background-size: cover;
+	background-position: center center;
+}
+.slide1 {
+	background-image: url(http://eskipaper.com/images/bicycle-background-2.jpg);
+}
+.slide2 {
+	background-image: url(http://bestwallpaperhd.com/wp-content/uploads/2014/11/Bicycle-Wallpaper.jpg);
+}
+.slide3 {
+	background-image: url(http://biketheplanetmemphis.com/wp-content/uploads/2014/12/bike-background1.jpg);
+}
+/* Carousel Fade Effect */
+.carousel.carousel-fade .item {
+	-webkit-transition: opacity 1s linear;
+	-moz-transition: opacity 1s linear;
+	-ms-transition: opacity 1s linear;
+	-o-transition: opacity 1s linear;
+	transition: opacity 1s linear;
+	opacity: .5;
+}
+.carousel.carousel-fade .active.item {
+	opacity: 1;
+}
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+	left: 0;
+	z-index: 2;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+/* Carousel Overlay */
+.carousel-overlay {
+	position: absolute;
+	bottom: 100px;
+	right: 0;
+	left: 0;
 }
