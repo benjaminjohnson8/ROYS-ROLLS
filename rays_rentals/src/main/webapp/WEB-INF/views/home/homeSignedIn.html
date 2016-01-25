@@ -25,25 +25,32 @@
 		<a th:href="@{/rental/allrentals}"><button class="button">View all rentals</button> <br /></a>
 		<a th:href="@{/search}"><button class="button">Rental Search</button> <br /></a>
 		</div>
-		<div class="col-md-5">
-		<p>Total Number Of Bikes</p>
-			<div class="progress">
+		<div class="col-md-6">
+		<p class="custom-bar" >Total Number Of Bikes</p>
+			<div class="custom-bar progress">
   				<div class="progress-bar progress-bar-striped active" role="progressbar" th:attr="aria-valuenow=${allBikeCount}" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
    				 	<p th:text="${allBikeCount}"></p>	
   				</div>
 			</div>
 			
-		<p>Available To Rent</p>
-			<div class="progress">
+		<p class="custom-bar" >Available To Rent</p>
+			<div class="custom-bar progress">
   				<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" th:attr="aria-valuenow=${availableCount}" aria-valuemin="0" aria-valuemax="100" th:style="@{'width:'+ ${availablePercent} +'%'}">
    				 	<p th:text="${availableCount}"></p>	
   				</div>
 			</div>
 			
-			<p>Unavailable To Rent</p>
-			<div class="progress">
+			<p class="custom-bar" >Unavailable To Rent</p>
+			<div class=" custom-bar progress">
   				<div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar" th:attr="aria-valuenow=${unavailableCount}" aria-valuemin="0" aria-valuemax="100" th:style="@{'width:'+ ${unavailablePercent} +'%'}">
    				 	<p th:text="${unavailableCount}"></p>	
+  				</div>
+			</div>
+			
+			<p class="custom-bar" >Customers</p>
+			<div class=" custom-bar progress">
+  				<div class="progress-bar progress-bar-striped active" role="progressbar" th:attr="aria-valuenow=${customerCount}" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+   				 	<p th:text="${customerCount}"></p>	
   				</div>
 			</div>
 		</div>

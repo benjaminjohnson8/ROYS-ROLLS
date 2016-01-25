@@ -12,4 +12,6 @@ public interface StatsService {
 
 	public int getPercentageOfUnAvailable();
 
+	public int customerCount();
+
 }

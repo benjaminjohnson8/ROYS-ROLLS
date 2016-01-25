@@ -26,6 +26,10 @@ public class HomeController {
 
 			int unavailableCount = statSerivce.getUnavailableBikes();
 			int unavailablePercent = statSerivce.getPercentageOfUnAvailable();
+			
+			int customerCount = statSerivce.customerCount();
+			
+			mv.addObject("customerCount", customerCount);
 			mv.addObject("availableCount", availabelBikeCount);
 			mv.addObject("allBikeCount", allBikeCount);
 			mv.addObject("availablePercent", availableBikePercent);

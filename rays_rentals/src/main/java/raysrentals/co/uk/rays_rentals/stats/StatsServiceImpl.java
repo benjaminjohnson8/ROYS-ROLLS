@@ -9,12 +9,17 @@ import org.springframework.stereotype.Service;
 
 import raysrentals.co.uk.rays_rentals.bike.Bike;
 import raysrentals.co.uk.rays_rentals.bike.BikeService;
+import raysrentals.co.uk.rays_rentals.customer.Customer;
+import raysrentals.co.uk.rays_rentals.customer.CustomerService;
 
 @Service
 @Transactional
 public class StatsServiceImpl implements StatsService {
 	@Autowired
 	BikeService bikeService;
+	
+	@Autowired
+	CustomerService customerService;
 	
 	@Override
 	 public int availableBikeCount(){
@@ -63,6 +68,17 @@ public class StatsServiceImpl implements StatsService {
 		int percent = (unAvailableBikes *100) / allBikes;
 		
 		return percent;
+		
+	}
+	
+	@Override
+	public int customerCount(){
+		List<Customer> customerRetrieved = customerService.retrieveAllCustomers();
+		 int customerCount = 0;
+		 for(@SuppressWarnings("unused") Customer customer: customerRetrieved){
+			 customerCount++;
+		 }
+		 return customerCount;	
 		
 	}
 	
