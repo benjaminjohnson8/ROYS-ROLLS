@@ -69,7 +69,7 @@ public class Bike implements java.io.Serializable   {
 	@Fetch (FetchMode.SELECT)
 	private List<MaintenanceRecord> maintenanceRecords = new ArrayList<MaintenanceRecord>();
 	
-	@OneToMany(mappedBy="bike")
+	@OneToMany(mappedBy="bike", cascade=CascadeType.ALL)
 	@Fetch (FetchMode.SELECT)
 	private List<RentalRecord> rentalRecords = new ArrayList<RentalRecord>();
 
