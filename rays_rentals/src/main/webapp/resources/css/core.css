@@ -1,7 +1,7 @@
 body {
     padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
     padding-bottom: 40px;
-    background-color: #eee;
+    background-color: white;
 }
 
 .form-narrow {
@@ -73,6 +73,7 @@ body {
 
 a:hover {
 	text-decoration: none;
+	color:black !important;
 }
 
 .table-scroll, .table-scroll-small {
@@ -105,7 +106,6 @@ label {
     margin-left: 70px;
 	float:left;
 }
-a { color: inherit; } 
 .button {
 	margin:10px;
   font: bold 20px Arial,sans-serif;
@@ -159,4 +159,23 @@ a { color: inherit; }
   -o-transition: all 10ms;
   -webkit-transition: all 10ms;
   transition: all 10ms;
+}
+
+.blue-nav{
+	background-color: #006699;
+	border-color:white;
+}
+
+.whiteLink{
+	color:white !important;
+}
+
+.statText {
+	width: 100%;
+	padding: 1%;
+	display: -webkit-inline-block;
+	word-break: break-word;
+	font-size: 20px;
+	text-align: center;
+	display: block;
 }
