@@ -132,22 +132,22 @@ label {
 	background-position: center center;
 }
 .slide1 {
-	background-image: url(http://eskipaper.com/images/bicycle-background-2.jpg);
+	background-image: url("../images/bicycle-background-2.jpg");
 }
 .slide2 {
-	background-image: url(http://bestwallpaperhd.com/wp-content/uploads/2014/11/Bicycle-Wallpaper.jpg);
+	background-image: url("../images/Bicycle-Wallpaper.jpg");
 }
 .slide3 {
-	background-image: url(http://biketheplanetmemphis.com/wp-content/uploads/2014/12/bike-background1.jpg);
+	background-image: url("../images/newbike.jpg");
 }
 /* Carousel Fade Effect */
 .carousel.carousel-fade .item {
-	-webkit-transition: opacity 1s linear;
-	-moz-transition: opacity 1s linear;
-	-ms-transition: opacity 1s linear;
-	-o-transition: opacity 1s linear;
-	transition: opacity 1s linear;
-	opacity: .5;
+	-webkit-transition: 0.9s ease-in-out left;
+    transition: 0.9s ease-in-out left;
+    -webkit-transition: 0.9s, ease-in-out, left;
+    -moz-transition: .9s, ease-in-out, left;
+    -o-transition: .9s, ease-in-out, left;
+    transition: .9s, ease-in-out, left;
 }
 .carousel.carousel-fade .active.item {
 	opacity: 1;
