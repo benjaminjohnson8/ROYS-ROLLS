@@ -49,11 +49,15 @@ public class RentalController {
 	
 	@RequestMapping(value = "/addNewRentalRecord")
 	public ModelAndView newRentalInfo(@ModelAttribute("rentalRecord") RentalRecord rentalRecord) {
-		
 		Long bikeId = rentalRecord.getBike().getId();
 		if(bikeId !=null){
 			Bike bike =bikeService.retrieveBike(bikeId);
 			bike.setAvailable(false);
+			bikeService.createOrUpdateBike(bike);
+		}
+		if(rentalRecord.getTimeBackActual() != null){
+			Bike bike =bikeService.retrieveBike(bikeId);
+			bike.setAvailable(true);
 			bikeService.createOrUpdateBike(bike);
 		}
 		rentalService.createOrUpdateRentalRecord(rentalRecord);
@@ -73,11 +77,12 @@ public class RentalController {
 		Long customerId = rentalRecord.getCustomer().getId();
 		Customer customerRetrieved = customerService.retrieveCustomer(customerId);
 		//had to add the bike and customer as model objects 
-		mv.addObject("rentalRecord", rentalRecord);
 		mv.addObject("title", "Update Rental Record");
 		mv.addObject("customerRetrieved", customerRetrieved);
 		mv.addObject("bikeRetrieved", bikeRetieved);
 		mv.addObject("title", "Edit Bike");
+		mv.addObject("rentalRecord", rentalRecord);
+
 		return mv;
 	}
 }
