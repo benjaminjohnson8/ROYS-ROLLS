@@ -21,7 +21,6 @@
         <!-- /* The message code is returned from the @Controller */ -->
         <div th:replace="fragments/alert :: alert (type=${#strings.toLowerCase(message.type)}, message=#{${message.message}(${#authentication.name})})">&nbsp;</div>
     </th:block>
-    
     <div style="display:inline-block">
 		<h2 class="pull-right"><small><a th:href="@{/bike/newbike}"><i class="fa fa-plus"></i>Add New Bike</a></small></h2>
 	</div>

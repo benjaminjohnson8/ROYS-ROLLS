@@ -13,10 +13,17 @@
    </head>
    <body>
       <div th:replace="fragments/header :: header">&nbsp;</div>
+      <h1>Bike Details </h1> <hr />
+  
       <div class="container">
          <form method="post" th:action="@{/bike/addNewBike}"
             th:object="${bike}">
             <input type="hidden" th:field="*{id}" />
+            <div th:if="${bike.purchaseDate != null}">
+	           	<input type="hidden" th:field="*{purchaseDate}" />
+	            <input type="hidden" th:field="*{available}" />
+            </div>
+            
             <div class="container col-md-8 col-centered">
 	            <div th:each="err : ${#fields.errors('*')}"  class="alert alert-danger alert-dismissible" role="alert" >
 			 		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -28,7 +35,6 @@
                   <div th:if = "${title != null}">
                   	<h2 th:text="${title}"></h2>
                   </div>
-                     <h2>Create New Bike</h2><hr />
                      <label> <input th:errorclass="value-error" type="text"
                         class="form-control form-padding" th:field="*{manufacturer}"
                         placeholder="Manufacturer" />
