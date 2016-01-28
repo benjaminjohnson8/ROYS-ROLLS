@@ -15,10 +15,9 @@
 </head>
 <body>
 <div th:replace="fragments/header :: header">&nbsp;</div>
-		<div class="col-md-4 col-centered">
+<div class="container">
 			<h2>Rental Search</h2>
 			<hr></hr>
-		</div>
 		<div class="col-md-12 col-centered search-container">
 		<div>
 			<form style="text-align: center;" class="col-centered" method="post" th:action="@{/search}" th:object="${rentalSearch}">
@@ -82,6 +81,6 @@
 			</table>
 			</div>
 		</div>
-
+</div>
     </body>
 </html>
